@@ -9,16 +9,19 @@ import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 Vue.use(BootstrapVue);
 
+import 'vue-awesome/icons'
+import Icon from 'vue-awesome/components/Icon'
+Vue.component('v-icon', Icon);
+
+import MultiSelect from 'vue-multiselect'
+Vue.component('multi-select', MultiSelect);
+
 import Footer from './components/footer/footer';
-import SideBar from './components/sideBar/sideBar';
-import Nav from './components/nav/nav';
+import Navbar from './components/nav/nav';
+Vue.component('footer-section', Footer);
+Vue.component('nav-bar', Navbar);
 
-
-Vue.component('Footer', Footer);
-Vue.component('SideBar', SideBar);
-Vue.component('Nav', Nav);
-
-Vue.config.productionTip = false
+Vue.config.productionTip = false;
 
 /* eslint-disable no-new */
 new Vue({
@@ -26,4 +29,4 @@ new Vue({
   router,
   components: { App },
   template: '<App/>'
-})
+});

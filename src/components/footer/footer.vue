@@ -1,6 +1,6 @@
 <template>
     <div class="footer">
-        <pre v-text="$attrs"/>
+
     </div>
 </template>
 

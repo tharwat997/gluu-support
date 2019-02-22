@@ -1,8 +1,7 @@
 <template>
-    <div>
+    <div >
         <b-container fluid>
            <Nav></Nav>
-
         </b-container>
 
         <b-container>

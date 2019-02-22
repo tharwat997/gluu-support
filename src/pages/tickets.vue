@@ -1,33 +1,79 @@
 <template>
     <div>
+       <div id="nav-container">
+           <b-container fluid>
+               <nav-bar></nav-bar>
+           </b-container>
+       </div>
+
+        <div id="nav-tabs-container">
+                <b-container>
+                    <b-row>
+                        <b-col cols="12">
+                            <b-nav class="align-items-center">
+                                <b-nav-item>
+                                    <b-dropdown variant="link" no-caret>
+                                        <template slot="button-content">My assignment<v-icon name="angle-down" class="ml-lg-2"></v-icon></template>
+                                        <b-dropdown-item>First Action</b-dropdown-item>
+                                        <b-dropdown-item>First Action</b-dropdown-item>
+                                        <b-dropdown-item>First Action</b-dropdown-item>
+                                    </b-dropdown>
+                                </b-nav-item>
+                                <b-nav-item>Unassigned</b-nav-item>
+                                <b-nav-item>
+                                    <b-dropdown variant="link" no-caret>
+                                        <template slot="button-content">All tickets<v-icon name="angle-down" class="ml-lg-2"></v-icon></template>
+                                        <b-dropdown-item>First Action</b-dropdown-item>
+                                        <b-dropdown-item>First Action</b-dropdown-item>
+                                        <b-dropdown-item>First Action</b-dropdown-item>
+                                    </b-dropdown>
+                                </b-nav-item>
+                                <b-nav-item>
+                                    <b-dropdown variant="link" no-caret>
+                                        <template slot="button-content">My tickets<v-icon name="angle-down" class="ml-lg-2"></v-icon></template>
+                                        <b-dropdown-item>First Action</b-dropdown-item>
+                                        <b-dropdown-item>First Action</b-dropdown-item>
+                                        <b-dropdown-item>First Action</b-dropdown-item>
+                                    </b-dropdown>
+                                </b-nav-item>
+                            </b-nav>
+                        </b-col>
+                    </b-row>
+                </b-container>
+        </div>
+
+        <div id="content-container" class="mt-lg-5">
+            <b-container>
+                <b-row>
+                    <b-col lg="3">
+                        <div id="sidebar-container">
+                            <side-bar></side-bar>
+                        </div>
+                    </b-col>
+                    <b-col lg="9">
+                        <div id="ticket-list-container">
+                            <ticket-list></ticket-list>
+                        </div>
+                    </b-col>
+                </b-row>
+            </b-container>
+        </div>
+
         <b-container fluid>
-            <Nav></Nav>
-
-        </b-container>
-
-        <b-container>
-            <b-row>
-                <b-col class="4">
-                    <SideBar></SideBar>
-                </b-col>
-                <b-col class="8">
-                </b-col>
-            </b-row>
-        </b-container>
-
-        <b-container fluid>
-            <Footer></Footer>
+            <footer-section></footer-section>
         </b-container>
     </div>
 
 </template>
 
 <script>
+    import sideBar from '../components/sideBar/sideBar'
+    import ticketList from '../components/ticket-list/ticket-list'
     export default {
+        components: {sideBar,ticketList},
         name: "tickets"
     }
 </script>
 
 <style scoped>
-
 </style>

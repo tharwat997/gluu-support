@@ -1,0 +1,49 @@
+%badge {
+    border-radius: 2px;
+    padding: 3px 10px;
+    border: none;
+    font-size: 13px;
+    font-family: "LatoWebMedium";
+}
+
+.lightblue{
+    @extend %badge;
+    color: #1FBFDD;
+    background-color: rgba(31, 191, 221, 0.15);
+}
+
+.purple{
+    @extend %badge;
+    color: #B736FF;
+    background-color: rgba(183, 54, 255, 0.15);
+}
+
+.grey{
+    @extend %badge;
+    color: #4A4A4A;
+    background-color: rgba(0,0,0,0.15);
+}
+
+.blue{
+    @extend %badge;
+    color: #786EFF;
+    background-color: rgba(120, 110, 255, 0.15);
+}
+
+.green{
+    @extend %badge;
+    color: #41CC22;
+    background-color: rgba(65, 204, 34, 0.15);
+}
+
+.yellow{
+    @extend %badge;
+    color: #FFBC16;
+    background-color: rgba(255, 188, 22, 0.15);
+}
+
+.red{
+    @extend %badge;
+    color: #FF591C;
+    background-color: rgba(255, 89, 28, 0.15);
+}
