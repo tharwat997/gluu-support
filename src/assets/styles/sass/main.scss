@@ -225,89 +225,98 @@ body {
 
 #ticket-list-container {
 
-  #search-bar-container {
+    #search-container{
 
-    @extend %input-select;
-    display: flex;
-    justify-content: space-between;
-    padding: 0;
-    background-color: white;
+      #search-bar-container {
 
-      input,
-      input:focus{
-        margin-left: 16px;
-        width: 80%;
-        border: none;
-        background-color: transparent;
+        @extend %input-select;
+        display: flex;
+        justify-content: space-between;
         padding: 0;
-        box-shadow: none;
+        background-color: white;
+
+        input,
+        input:focus{
+          margin-left: 16px;
+          width: 80%;
+          border: none;
+          background-color: transparent;
+          padding: 0;
+          box-shadow: none;
+        }
+
+        span {
+          background-color: $base-color;
+          padding: 0.5em 0.8em;
+          border-radius: 0 3px 3px 0;
+          cursor: pointer;
+        }
+
+        span:hover{
+
+        }
       }
 
-      span {
-        background-color: $base-color;
-        padding: 0.5em 0.8em;
-        border-radius: 0 3px 3px 0;
-        cursor: pointer;
+      #order-by-select-container {
+
+        label{
+          margin-bottom: 0;
+          margin-right: 0.5em;
+          @include text(14px,$font-color-base,$font-family-lato-Medium);
+        }
+
+        .select-tags-gluu {
+          border: 1px solid #DADDDE;
+          width: 50%;
+
+          .multiselect__select:before{
+            display: initial;
+          }
+
+        }
+
       }
 
-      span:hover{
-
-      }
-  }
-
-  #order-by-select-container {
-
-    label{
-      margin-bottom: 0;
-      margin-right: 0.5em;
     }
 
-    .select-tags-gluu {
-      border: 1px solid #DADDDE;
-      width: 50%;
-    }
+    // Ticket Component //
 
-  }
-}
+    #tickets-container{
 
-// Ticket Component //
+    .card-gluu{
+      -webkit-box-shadow: 0 15px 30px 0 rgba(215,220,225,1);
+      -moz-box-shadow: 0 15px 30px 0 rgba(215,220,225,1);
+      box-shadow: 0 15px 30px 0 rgba(215,220,225,1);
 
-#tickets-container{
-
-  .card-gluu{
-    -webkit-box-shadow: 0 15px 30px 0 rgba(215,220,225,1);
-    -moz-box-shadow: 0 15px 30px 0 rgba(215,220,225,1);
-    box-shadow: 0 15px 30px 0 rgba(215,220,225,1);
-
-    .card-body{
+      .card-body{
 
         display: flex;
         padding: 0;
 
         .card-left-side-gluu{
 
-            padding: 17px 30px;
-            border-right: 1px solid #EFF2F4;
+          padding: 17px 30px;
+          border-right: 1px solid #EFF2F4;
 
-            img{
-              width: 54px;
-            }
+          img{
+            width: 54px;
+          }
 
-            .card-left-side-info-name-gluu{
-              @include text(13px, $font-color-base, $font-family-lato-semi-bold);
-            }
+          .card-left-side-info-name-gluu{
+            @include text(13px, $font-color-base, $font-family-lato-semi-bold);
+          }
 
-            .card-left-side-info-company-gluu{
-              @include text(12px, #787E7B, $font-family-base);
-            }
+          .card-left-side-info-company-gluu{
+            @include text(12px, #787E7B, $font-family-base);
+          }
 
-            .card-left-side-info-type-gluu{
-              @include text(12px, $font-color-base, $font-family-base);
-            }
+          .card-left-side-info-type-gluu{
+            @include text(12px, $font-color-base, $font-family-base);
+          }
 
         }
 
-      .card-right-side-gluu {
+        .card-right-side-gluu {
 
           padding: 27px 20px;
           flex: 1;
@@ -326,31 +335,31 @@ body {
 
           .card-right-side-issue-details-gluu{
 
-              .card-right-side-issue-details-number-gluu{
-                @include text(14px, $base-color, $font-family-lato-Medium);
-              }
+            .card-right-side-issue-details-number-gluu{
+              @include text(14px, $base-color, $font-family-lato-Medium);
+            }
 
-              .card-right-side-issue-details-time-gluu,
-              .card-right-side-issue-details-date-gluu{
-                @include text(12px, $font-color-base, $font-family-base);
-              }
+            .card-right-side-issue-details-time-gluu,
+            .card-right-side-issue-details-date-gluu{
+              @include text(12px, $font-color-base, $font-family-base);
+            }
 
 
           }
 
           .card-right-right-side-gluu{
-              label{
-                display: flex;
-                margin-bottom: 16px;
-                @include text(14px, $font-family-base, $font-color-base);
+            label{
+              display: flex;
+              margin-bottom: 16px;
+              @include text(14px, $font-family-base, $font-color-base);
 
-                  img{
-                    margin-right: 0.5em;
-                    width: 17px;
-                    height: 17px;
-                  }
+              img{
+                margin: 0 0.5em;
               }
+            }
           }
+
+        }
 
       }
 
@@ -358,4 +367,91 @@ body {
 
   }
 
+    // Ticket Footer
+
+    #tickets-footer{
+      margin-top: 3em;
+
+      #pagination-container{
+
+          label{
+            margin-bottom: 0;
+            margin-right: 0.5em;
+            @include text(14px,$font-color-base,$font-family-lato-Medium);
+          }
+
+          .select-tags-gluu {
+            border: 1px solid #DADDDE;
+            width: auto;
+
+            .multiselect__select{
+              padding: 0;
+            }
+
+            .multiselect__tags{
+                span{
+                  padding: 0;
+                  margin: 0;
+                }
+            }
+
+            .multiselect__select:before{
+              display: initial;
+            }
+
+          }
+
+          .pagination-container-second-span{
+            @include text(15px,#787E7B, $font-family-lato-Medium);
+            margin-left: 0.5em;
+          }
+      }
+
+      #show-results-container{
+
+        .b-pagination{
+
+          margin-bottom: 0;
+
+          li:first-child,
+          li:nth-child(2),
+          li:nth-last-child(2){
+            display: none;
+          }
+
+          .page-item{
+            margin: 0 0.38em;
+            .page-link{
+              width: 36px;
+              height: 36px;
+              border-radius: 3px;
+              border: 1px solid #daddde;
+              background-color: #ffffff;
+              @include text(15px, $font-color-base, $font-family-lato-Medium);
+            }
+          }
+
+          .page-item[role=separator]{
+            .page-link{
+              background-color: transparent;
+              border: none;
+              padding: 0 12px;
+              display: flex;
+              flex-direction: column;
+              justify-content: flex-end;
+            }
+          }
+
+          li:last-child{
+            .page-link{
+              width: 100%;
+              @include cta-btn-gluu();
+            }
+          }
+
+        }
+      }
+    }
 }
+
+

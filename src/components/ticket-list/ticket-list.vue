@@ -1,7 +1,6 @@
 <template>
     <div class="ticket-list">
 
-
         <div id="search-container">
             <b-row>
                 <b-col lg="5" >
@@ -15,12 +14,16 @@
                     <div id="order-by-select-container" class="d-flex align-items-center justify-content-end">
                         <label class="card-labels-gluu">Order by:</label>
                         <multi-select
-                                class="select-tags-gluu single-select"
-                                v-model="value"
-                                :options="options"
+                                class="select-tags-gluu"
+                                v-model="orderByValue"
+                                :options="orderByOptions"
                                 label="name"
                                 track-by="name"
                                 :show-labels="false"
+                                placholder=""
+                                :allowEmpty="false"
+                                openDirection="bottom"
+                                :searchable="false"
                         ></multi-select>
 
                     </div>
@@ -42,6 +45,41 @@
             </ticket>
         </div>
 
+        <div id="tickets-footer">
+
+            <b-row class="d-flex align-items-center">
+                <b-col lg="5" >
+                    <div id="pagination-container" class="d-flex align-items-center ">
+                        <label class="card-labels-gluu">Show:</label>
+                        <multi-select
+                                class="select-tags-gluu"
+                                v-model="showResultsValue"
+                                :options="showResultsOptions"
+                                label="number"
+                                track-by="number"
+                                :show-labels="false"
+                                placeholder=""
+                                :allowEmpty="false"
+                                openDirection="bottom"
+                                :searchable="false"
+                        ></multi-select>
+                        <span class="pagination-container-second-span">of 150 tickets</span>
+                    </div>
+                </b-col>
+
+                <b-col lg="5" offset-lg="2">
+                    <div id="show-results-container" class="d-flex align-items-center justify-content-end">
+                        <b-pagination-nav  :number-of-pages="10" v-model="currentPage"
+                                                  last-text="Next"
+                                                  align="right"
+                        />
+
+                    </div>
+                </b-col>
+            </b-row>
+
+        </div>
+
     </div>
 </template>
 
@@ -55,14 +93,21 @@
         data (){
             return{
                 text1:"",
-                value: [
-
+                showResultsValue: [ { number: 10}],
+                showResultsOptions: [
+                    { number: 10},
+                    { number: 20},
+                    { number: 30},
+                    { number: 40}
                 ],
-                options: [
-                    { name: 'Vue.js', code: 'vu' },
-                    { name: 'Javascript', code: 'js' },
-                    { name: 'Open Source', code: 'os' }
-                ]
+                orderByValue: {name: 'Most recent'},
+                orderByOptions: [
+                    { name: 'Most recent'},
+                    { name: 'Least recent'},
+                    { name: 'User (a-z)'},
+                    { name: 'User (z-a)'}
+                ],
+                currentPage: 1
             }
         },
         methods: {

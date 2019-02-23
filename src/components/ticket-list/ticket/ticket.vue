@@ -17,9 +17,11 @@
 
 
                 <div class="card-right-side-gluu d-flex justify-content-between">
+
                     <div>
+
                         <div class="card-right-side-badge-container">
-                            <badge v-for="badge in badges" :color="badge.color" >{{badge.text}}</badge>
+                            <badge v-for="badge in badges" :key="badge.color" :color="badge.color" >{{badge.text}}</badge>
                         </div>
 
                         <div class="card-right-side-issue-title-gluu">
@@ -36,8 +38,9 @@
                     <div class="card-right-right-side-gluu d-flex flex-column justify-content-center ml-lg-2">
                         <label><b-img :src="commentSvgUrl" /> 12 responses</label>
                         <label><b-img :src="clapSvgUrl" /> 50 upvotes</label>
-                        <label> <b-img :src="userSvgUrl" /> Asim zaka</label>
+                        <label> <b-img :src="userSvgUrl" /> <span>Asim zaka</span> <b-img :src="arrowDownUrl" /> </label>
                     </div>
+
                 </div>
 
             </b-card>
@@ -67,6 +70,10 @@
             },
             userSvgUrl() {
                 return require('../../../assets/images/user.svg')
+                // The path could be '../assets/img.png', etc., which depends on where your vue file is
+            },
+            arrowDownUrl() {
+                return require('../../../assets/images/arrow_down.svg')
                 // The path could be '../assets/img.png', etc., which depends on where your vue file is
             }
         }

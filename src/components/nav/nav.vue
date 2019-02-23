@@ -1,7 +1,7 @@
 <template>
     <div>
         <b-navbar toggleable="lg"  variant="faded" type="light">
-            <b-navbar-brand href="#">gluu</b-navbar-brand>
+            <b-navbar-brand href="#"><b-img :src="logoSvgUrl" /></b-navbar-brand>
 
             <b-navbar-toggle target="nav_collapse" />
 
@@ -53,6 +53,10 @@
             },
             gridUrl () {
                 return require('../../assets/images/grid.svg')
+                // The path could be '../assets/img.png', etc., which depends on where your vue file is
+            },
+            logoSvgUrl() {
+                return require('../../assets/images/logo.png')
                 // The path could be '../assets/img.png', etc., which depends on where your vue file is
             }
         }
