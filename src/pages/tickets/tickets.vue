@@ -1,11 +1,7 @@
 <template>
-    <div>
-       <div id="nav-container">
-           <b-container fluid>
-               <nav-bar></nav-bar>
-           </b-container>
-       </div>
-
+    <div id="tickets-page-container">
+        <nav-bar></nav-bar>
+<!--todo put the container tabs inside each component-->
         <div id="nav-tabs-container">
                 <b-container>
                     <b-row>
@@ -67,13 +63,16 @@
 </template>
 
 <script>
-    import sideBar from '../components/sideBar/sideBar'
-    import ticketList from '../components/ticket-list/ticket-list'
+    import sideBar from '../../components/sideBar/sideBar'
+    import ticketList from './ticket-list/ticket-list'
     export default {
         components: {sideBar,ticketList},
         name: "tickets"
     }
 </script>
 
-<style scoped>
+<style module>
+    body{
+        background-color: #F3F5F7;
+    }
 </style>

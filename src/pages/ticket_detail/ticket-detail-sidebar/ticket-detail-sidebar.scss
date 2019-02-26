@@ -1,0 +1,65 @@
+#sidebar-container{
+  .sidebar-item:first-child{
+    padding-top: 0;
+  }
+  .sidebar-item{
+    border-bottom: 1px solid #E5E7E9;
+    padding: 12px 0;
+    .header-text{
+      color: #434947;
+      font-size: 14px;
+      font-family: "LatoWeb";
+    }
+    .inner-text{
+      color: #181F1C;
+      font-family: "LatoWebMedium";
+      font-size: 16px;
+    }
+    .edit-svg-img{
+      cursor: pointer;
+    }
+  }
+  .additional-product-container{
+    img{
+      cursor: pointer;
+    }
+    button,
+    button:focus{
+      font-size: 15px;
+      color: #00B372;
+      font-family: "LatoWebSemibold";
+      text-decoration: none;
+      background: none;
+      border: none;
+      box-shadow: none;
+      -webkit-box-shadow: none;
+      outline-color: transparent;
+    }
+  }
+  .notification-container{
+    padding: 1em;
+    background-color: #F7F9FA;
+    border: 1px solid #ECF0F4;
+    border-radius: 3px;
+    .notification-container-title{
+      color: #181F1C;
+      font-family: "LatoWebMedium";
+      font-size: 16px;
+    }
+    .notification-container-subscribe-button{
+      border: 1px solid #D9DFE2;
+      background-color: #E7EBED;
+      color: #181F1C;
+      border-radius: 3px;
+      padding: 5px 3em;
+    }
+    .notification-container-subtitle{
+      color: #434947;
+      font-size: 14px;
+      font-family: "LatoWebMedium";
+    }
+    img{
+      margin: 0 0.1em;
+    }
+  }
+}

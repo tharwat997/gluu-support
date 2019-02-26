@@ -8,7 +8,7 @@ $font-family-lato-Medium: "LatoWebMedium";
 $font-family-lato-semi-bold: "LatoWebSemibold";
 
 body {
-  background-color: $background-color;
+  //background-color: $background-color;
   font-family: $font-family-base;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -23,12 +23,28 @@ body {
   text-rendering: auto;
 }
 
+.tooltip-inner{
+  box-shadow: 0 20px 40px 6px #d9dee2;
+  border-radius: 3px;
+  background-color: #ffffff;
+  color: #181f1c;
+  font-family: "LatoWeb";
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.13px;
+  padding: 15px;
+}
+
+.bs-tooltip-top .arrow::before, .bs-tooltip-auto[x-placement^="top"] .arrow::before{
+  border-top-color:#ffffff;
+}
+
 //SCSS COMPONENTS //
 
 @mixin cta-btn-gluu(){
   background-color: $base-color;
   color: #FFFFFF;
-  font-family: $font-family-lato-semi-bold;
+  font-family: $font-family-base;
   font-size: 16px;
   padding: 10px 12px;
   border: none;
@@ -49,6 +65,21 @@ body {
   border-radius: 3px;
   box-shadow: none;
   padding: 9px 14px;
+}
+
+%primary-btn{
+  background-color: #f1f5f9;
+  font-family: $font-family-lato-Medium;
+  color: #434947;
+  border-radius: 3px;
+  border: 1px solid #E0E5E5;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  font-size: 14px;
+  padding: 10px 12px;
+  -webkit-box-shadow: 0px 1px 2px 0px rgba(241,244,246,1);
+  -moz-box-shadow: 0px 1px 2px 0px rgba(241,244,246,1);
+  box-shadow: 0px 1px 2px 0px rgba(241,244,246,1);
 }
 
 // Navbar Component //
@@ -221,9 +252,12 @@ body {
   @include text(16px, $font-color-base, $font-family-lato-Medium);
 }
 
- // Ticket List Component //
+// Tickets Page Component //
+#tickets-page-container{
 
-#ticket-list-container {
+  // Ticket List Component //
+
+  #ticket-list-container {
 
     #search-container{
 
@@ -283,80 +317,82 @@ body {
 
     #tickets-container{
 
-    .card-gluu{
-      -webkit-box-shadow: 0 15px 30px 0 rgba(215,220,225,1);
-      -moz-box-shadow: 0 15px 30px 0 rgba(215,220,225,1);
-      box-shadow: 0 15px 30px 0 rgba(215,220,225,1);
+      .card-gluu{
+        -webkit-box-shadow: 0 15px 30px 0 rgba(215,220,225,1);
+        -moz-box-shadow: 0 15px 30px 0 rgba(215,220,225,1);
+        box-shadow: 0 15px 30px 0 rgba(215,220,225,1);
 
-      .card-body{
+        .card-body{
 
-        display: flex;
-        padding: 0;
+          display: flex;
+          padding: 0;
 
-        .card-left-side-gluu{
+          .card-left-side-gluu{
 
-          padding: 17px 30px;
-          border-right: 1px solid #EFF2F4;
+            padding: 17px 30px;
+            border-right: 1px solid #EFF2F4;
 
-          img{
-            width: 54px;
-          }
-
-          .card-left-side-info-name-gluu{
-            @include text(13px, $font-color-base, $font-family-lato-semi-bold);
-          }
-
-          .card-left-side-info-company-gluu{
-            @include text(12px, #787E7B, $font-family-base);
-          }
-
-          .card-left-side-info-type-gluu{
-            @include text(12px, $font-color-base, $font-family-base);
-          }
-
-        }
-
-        .card-right-side-gluu {
-
-          padding: 27px 20px;
-          flex: 1;
-
-          .card-right-side-badge-container{
-            span{
-              margin: 0 0.25em;
-            }
-          }
-
-          .card-right-side-issue-title-gluu{
-            @include text(18px, $base-color, $font-family-lato-Medium);
-            margin-top: 17px;
-            margin-bottom: 12px;
-          }
-
-          .card-right-side-issue-details-gluu{
-
-            .card-right-side-issue-details-number-gluu{
-              @include text(14px, $base-color, $font-family-lato-Medium);
+            img{
+              width: 54px;
             }
 
-            .card-right-side-issue-details-time-gluu,
-            .card-right-side-issue-details-date-gluu{
+            .card-left-side-info-name-gluu{
+              @include text(13px, $font-color-base, $font-family-lato-semi-bold);
+            }
+
+            .card-left-side-info-company-gluu{
+              @include text(12px, #787E7B, $font-family-base);
+            }
+
+            .card-left-side-info-type-gluu{
               @include text(12px, $font-color-base, $font-family-base);
             }
 
-
           }
 
-          .card-right-right-side-gluu{
-            label{
-              display: flex;
-              margin-bottom: 16px;
-              @include text(14px, $font-family-base, $font-color-base);
+          .card-right-side-gluu {
 
-              img{
-                margin: 0 0.5em;
+            padding: 27px 20px;
+            flex: 1;
+
+            .card-right-side-badge-container{
+              span{
+                margin: 0 0.25em;
               }
             }
+
+            .card-right-side-issue-title-gluu{
+              @include text(18px, $base-color, $font-family-lato-Medium);
+              margin-top: 17px;
+              margin-bottom: 12px;
+            }
+
+            .card-right-side-issue-details-gluu{
+
+              .card-right-side-issue-details-number-gluu{
+                @include text(14px, $base-color, $font-family-lato-Medium);
+              }
+
+              .card-right-side-issue-details-time-gluu,
+              .card-right-side-issue-details-date-gluu{
+                @include text(12px, $font-color-base, $font-family-base);
+              }
+
+
+            }
+
+            .card-right-right-side-gluu{
+              label{
+                display: flex;
+                margin-bottom: 16px;
+                @include text(14px, $font-family-base, $font-color-base);
+
+                img{
+                  margin: 0 0.5em;
+                }
+              }
+            }
+
           }
 
         }
@@ -365,8 +401,6 @@ body {
 
     }
 
-  }
-
     // Ticket Footer
 
     #tickets-footer{
@@ -374,37 +408,37 @@ body {
 
       #pagination-container{
 
-          label{
-            margin-bottom: 0;
-            margin-right: 0.5em;
-            @include text(14px,$font-color-base,$font-family-lato-Medium);
+        label{
+          margin-bottom: 0;
+          margin-right: 0.5em;
+          @include text(14px,$font-color-base,$font-family-lato-Medium);
+        }
+
+        .select-tags-gluu {
+          border: 1px solid #DADDDE;
+          width: auto;
+
+          .multiselect__select{
+            padding: 0;
           }
 
-          .select-tags-gluu {
-            border: 1px solid #DADDDE;
-            width: auto;
-
-            .multiselect__select{
+          .multiselect__tags{
+            span{
               padding: 0;
+              margin: 0;
             }
-
-            .multiselect__tags{
-                span{
-                  padding: 0;
-                  margin: 0;
-                }
-            }
-
-            .multiselect__select:before{
-              display: initial;
-            }
-
           }
 
-          .pagination-container-second-span{
-            @include text(15px,#787E7B, $font-family-lato-Medium);
-            margin-left: 0.5em;
+          .multiselect__select:before{
+            display: initial;
           }
+
+        }
+
+        .pagination-container-second-span{
+          @include text(15px,#787E7B, $font-family-lato-Medium);
+          margin-left: 0.5em;
+        }
       }
 
       #show-results-container{
@@ -452,6 +486,244 @@ body {
         }
       }
     }
+  }
+
 }
+
+// Ticket Details Page Component //
+
+#ticket-details-page-container{
+
+  p{
+    font-size: 15px;
+  }
+
+  #breadcrumbs-container{
+    .first-page{
+      @include text(16px,#787E7B, $font-family-lato-Medium);
+      text-decoration: none;
+    }
+    .second-page{
+      @include text(16px, $base-color, $font-family-lato-Medium);
+      text-decoration: none;
+    }
+    .third-page{
+      @include text(16px,$font-color-base, $font-family-lato-Medium);
+      text-decoration: none;
+    }
+  }
+
+  #content-container{
+
+    //Section Components//
+
+    $gutter: 100px;
+    $border-width: 2px;
+    $dot-diameter: 8px;
+
+    .timeline {
+      width:100%;
+      position: relative;
+
+      &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left:2em;
+        bottom: 0;
+        width: $border-width;
+        background: #ddd;
+      }
+      &:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+    }
+
+    .entry:last-child{
+      .title{
+        margin-bottom: 0;
+      }
+      .body{
+        margin-top: 1em;
+      }
+    }
+
+    .entry {
+      clear: both;
+      text-align: left;
+      position: relative;
+      display: flex;
+      align-items: center;
+      .title {
+        margin: 1em 0;
+        float: left;
+        text-align: right;
+        position: relative;
+        display: flex;
+        align-items: center;
+        left: 1em;
+        width: fit-content;
+      }
+      .body {
+       margin-left: 2em;
+        img{
+          width: 80%;
+        }
+        @include text(14px, $font-family-base, #434947);
+      }
+    }
+
+    .tooltip-inner{
+      box-shadow: 0 20px 40px 6px #d9dee2;
+      border-radius: 3px;
+      background-color: #ffffff;
+      color: #181f1c;
+      font-family: "LatoWeb";
+      font-size: 14px;
+      font-weight: 400;
+      letter-spacing: 0.13px;
+    }
+
+    //Sections//
+
+      #ticket-details-content-header-container{
+
+        .ticket-details-header{
+          @include text(24px, $font-family-base, $font-color-base);
+          span{
+            @include text(24px, $font-family-base, #787E7B);
+          }
+        }
+
+        .ticket-details-subheader{
+          img{
+            -webkit-box-shadow: 0px 1px 2px 0px rgba(241,244,246,1);
+            -moz-box-shadow: 0px 1px 2px 0px rgba(241,244,246,1);
+            box-shadow: 0px 1px 2px 0px rgba(241,244,246,1);
+          }
+          .primary-btn-gluu{
+            @extend %primary-btn;
+            padding: 0.4em 1.5em;
+            margin-left: 0.5em;
+          }
+        }
+
+      }
+
+      .ticket-details-content-container{
+
+        .see-more-link{
+         margin-left: 1em;
+          @include text(14px, $font-family-lato-semi-bold, #5D91F0)
+        }
+
+        .card{
+
+            border: 1px solid #E3E7EA;
+
+            .card-header{
+
+              @include text(14px, #434947, $font-family-base);
+              background-color: #F1F5F9;
+
+              .ticket-details-content-copy-link-btn-gluu,
+              .ticket-details-content-copy-link-btn-gluu:focus,
+              .ticket-details-content-edit-btn-gluu:focus,
+              .ticket-details-content-edit-btn-gluu{
+                @include text(14px, #434947, $font-family-lato-semi-bold);
+                background-color: transparent;
+                border: none;
+                box-shadow:none;
+                -webkit-box-shadow: none;
+                padding: 3px 12px;
+              }
+              .ticket-details-content-ellipsis-icon-gluu{
+                padding: 3px 12px;
+                cursor: pointer;
+              }
+            }
+
+        }
+
+      }
+
+      .user-details-container{
+
+        .card-left-side-gluu{
+
+          padding: 0;
+
+          img{
+            width: 54px;
+          }
+
+          .card-left-side-info-name-gluu{
+            @include text(13px, $font-color-base, $font-family-lato-semi-bold);
+          }
+
+          .card-left-side-info-company-gluu{
+            @include text(12px, #787E7B, $font-family-base);
+          }
+
+          .card-left-side-info-type-gluu{
+            @include text(12px, $font-color-base, $font-family-base);
+          }
+
+          .card-left-side-info-usertype-gluu{
+            @include cta-btn-gluu;
+            padding: 2px 10px;
+            color: #ffffff;
+            font-family: Lato;
+            font-size: 14px;
+            font-weight: 400;
+            width: fit-content;
+          }
+
+        }
+
+      }
+
+      #post-a-response-container{
+        padding: 2em;
+        background-color: #F8F9FB;
+        border: 1px solid #E3E7EA;
+        border-radius: 3px;
+        .post-a-response-container-header{
+          @include text(22px, $font-color-base , $font-family-base);
+        }
+        .post-a-response-container-label{
+          @include text(15px, #434947, $font-family-lato-Medium);
+        }
+        .multiselect__tags{
+          background: transparent;
+          border: 1px solid #DADFE2;
+          border-radius: 3px;
+          .multiselect__single,
+          input{
+            background: transparent;
+          }
+        }
+        .cta-btn-gluu,
+        .cta-btn-gluu:focus{
+          @include cta-btn-gluu();
+          padding: 7px 12px;
+          margin-right: .9em;
+          box-shadow: none;
+        }
+        .secondary-btn-gluu,
+        .secondary-btn-gluu:focus{
+          background-color: #FFFFFF;
+          border: 1px solid #EDEDED;
+          padding: 7px 12px;
+          color: #787E7B;
+          box-shadow: none;
+        }
+      }
+
+  }
+}
+
 
 

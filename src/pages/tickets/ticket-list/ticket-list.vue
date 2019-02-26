@@ -122,7 +122,7 @@
         },
         computed: {
             searchIconUrl () {
-                return require('../../assets/images/search.svg')
+                return require('../../../assets/images/search.svg')
                 // The path could be '../assets/img.png', etc., which depends on where your vue file is
             }
         }

@@ -1,7 +1,7 @@
 <template>
-    <div class="footer">
+    <b-container fluid>
 
-    </div>
+    </b-container>
 </template>
 
 <script>

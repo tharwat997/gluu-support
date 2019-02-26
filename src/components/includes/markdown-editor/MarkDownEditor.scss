@@ -1,0 +1,27 @@
+#mde{
+  .v-note-wrapper{
+    min-height: 170px;
+  }
+  .v-note-op{
+    border-right: 1px solid #E3E7EA;
+    border-left: 1px solid #E3E7EA;
+    border-top: 1px solid #E3E7EA;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+  }
+  .v-note-panel{
+    border:1px solid #E3E7EA;
+  }
+  .mt-5{
+    margin-top: 0 !important;
+    border-right: 1px solid #E3E7EA;
+    border-left: 1px solid #E3E7EA;
+    border-bottom: 1px solid #E3E7EA;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    padding: .75em;
+    span{
+      color: #858A89;
+    }
+  }
+}

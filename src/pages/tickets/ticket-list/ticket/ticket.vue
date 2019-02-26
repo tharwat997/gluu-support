@@ -49,7 +49,7 @@
 
 </template>
 <script>
-    import Badge from '../../includes/badge/badge'
+    import Badge from '../../../../components/includes/badge/badge'
     export default {
         components: {Badge},
         props:{
@@ -57,23 +57,23 @@
         },
         computed: {
             avatarUrl() {
-                return require('../../../assets/images/avatar.svg')
+                return require('../../../../assets/images/avatar.svg')
                 // The path could be '../assets/img.png', etc., which depends on where your vue file is
             },
             commentSvgUrl() {
-                return require('../../../assets/images/comment.svg')
+                return require('../../../../assets/images/comment.svg')
                 // The path could be '../assets/img.png', etc., which depends on where your vue file is
             },
             clapSvgUrl() {
-                return require('../../../assets/images/clap.svg')
+                return require('../../../../assets/images/clap.svg')
                 // The path could be '../assets/img.png', etc., which depends on where your vue file is
             },
             userSvgUrl() {
-                return require('../../../assets/images/user.svg')
+                return require('../../../../assets/images/user.svg')
                 // The path could be '../assets/img.png', etc., which depends on where your vue file is
             },
             arrowDownUrl() {
-                return require('../../../assets/images/arrow_down.svg')
+                return require('../../../../assets/images/arrow_down.svg')
                 // The path could be '../assets/img.png', etc., which depends on where your vue file is
             }
         }
