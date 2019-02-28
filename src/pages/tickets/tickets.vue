@@ -43,12 +43,12 @@
                 <b-row>
                     <b-col lg="3">
                         <div id="sidebar-container">
-                            <side-bar></side-bar>
+                            <side-bar v-on:add-tag="globalFilterValues = $event"></side-bar>
                         </div>
                     </b-col>
                     <b-col lg="9">
                         <div id="ticket-list-container">
-                            <ticket-list></ticket-list>
+                            <ticket-list :array-of-values="globalFilterValues"></ticket-list>
                         </div>
                     </b-col>
                 </b-row>
@@ -67,7 +67,12 @@
     import ticketList from './ticket-list/ticket-list'
     export default {
         components: {sideBar,ticketList},
-        name: "tickets"
+        name: "tickets",
+        data(){
+            return{
+                globalFilterValues: []
+            }
+        }
     }
 </script>
 

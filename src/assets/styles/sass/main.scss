@@ -134,10 +134,17 @@ body {
 #nav-tabs-container{
   background-color: white;
   border: 1px solid #EBEBEB;
-  z-index: 0;
+  z-index: 1;
   position: relative;
   bottom: 1px;
   padding: 0.5em 0 0 0;
+}
+
+#nav-tabs-container .dropdown-menu.show{
+    border: none;
+    -webkit-box-shadow: 0px 20px 40px 0px rgba(221,228,226,1);
+    -moz-box-shadow: 0px 20px 40px 0px rgba(221,228,226,1);
+    box-shadow: 0px 20px 40px 0px rgba(221,228,226,1);
 }
 
 #nav-tabs-container .dropdown-toggle-no-caret,
@@ -145,7 +152,8 @@ body {
   text-decoration: none;
   transition: 0.2s;
   @include text(16px, $font-color-base, $font-family-lato-Medium);
-
+  border-radius: 0;
+  padding: 6px 0;
 }
 
 #nav-tabs-container .dropdown-toggle-no-caret:hover{
@@ -155,9 +163,45 @@ body {
   @include text(16px, $base-color, $font-family-lato-Medium);
 }
 
+
 #nav-tabs-container li > a{
   color: #181F1C;
 }
+
+#avatar-nav-dropdown{
+  button{
+    padding: 0;
+  }
+  svg{
+    display: none;
+  }
+  .dropdown-menu.show{
+    left: -6em !important;
+    top: 0.5em !important;
+    border: none;
+    -webkit-box-shadow: 0px 20px 40px 0px rgba(221,228,226,1);
+    -moz-box-shadow: 0px 20px 40px 0px rgba(221,228,226,1);
+    box-shadow: 0px 20px 40px 0px rgba(221,228,226,1);
+  }
+}
+
+#support-nav-dropdown{
+  button{
+    padding: 0;
+  }
+  svg{
+    display: none;
+  }
+  .dropdown-menu.show{
+    left: -9em !important;
+    top: 0.5em !important;
+    border: none;
+    -webkit-box-shadow: 0px 20px 40px 0px rgba(221,228,226,1);
+    -moz-box-shadow: 0px 20px 40px 0px rgba(221,228,226,1);
+    box-shadow: 0px 20px 40px 0px rgba(221,228,226,1);
+  }
+}
+
 
 //Sidebar Component//
 
@@ -290,6 +334,28 @@ body {
 
         }
       }
+
+      #tags-container{
+        .tags-container-tag-gluu{
+          background-color: white ;
+          color: #41b883;
+          .multiselect__tag-icon{
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            box-shadow: none;
+            outline: none;
+          }
+          .multiselect__tag-icon:focus, .multiselect__tag-icon:hover{
+            background: transparent;
+          }
+          .multiselect__tag-icon:after{
+            color:#41b883;
+            font-size: 19px;
+          }
+        }
+      }
+
 
       #order-by-select-container {
 

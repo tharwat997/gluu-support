@@ -21,11 +21,24 @@
                         </b-nav-item>
 
                         <b-nav-item>
-                            <b-img :src="infoUrl" rounded="circle"></b-img>
+                            <b-dropdown variant="link" no-caret id="support-nav-dropdown">
+                                <template slot="button-content"><b-img :src="infoUrl" rounded="circle" /><v-icon name="angle-down" class="ml-lg-2"></v-icon></template>
+                                <b-dropdown-item class="mb-lg-2"> <div class="d-flex align-items-center"><b-img class="mr-lg-4" :src="supportSvgUrl" /> Support Call</div></b-dropdown-item>
+                                <b-dropdown-item class="mb-lg-2"> <div class="d-flex align-items-center"><b-img class="mr-lg-4" :src="notificationSvgUrl" />Consultation</div></b-dropdown-item>
+                            </b-dropdown>
                         </b-nav-item>
 
                         <b-nav-item>
-                            <b-img :src="avatarUrl" rounded="circle"></b-img>
+                            <b-dropdown variant="link" no-caret id="avatar-nav-dropdown">
+                                <template slot="button-content"><b-img :src="avatarUrl" rounded="circle"></b-img><v-icon name="angle-down" class="ml-lg-2"></v-icon></template>
+                                <b-dropdown-item class="mb-lg-2"> <div class="d-flex align-items-center"><b-img class="mr-lg-4" :src="dashboardSvgUrl" /> Dashboard</div></b-dropdown-item>
+                                <b-dropdown-item class="mb-lg-2"> <div class="d-flex align-items-center"><b-img class="mr-lg-4" :src="notificationSvgUrl" /> Alerts</div></b-dropdown-item>
+                                <b-dropdown-item class="mb-lg-2"> <div class="d-flex align-items-center"><b-img class="mr-lg-4" :src="userSvgUrl" /> My Profile</div></b-dropdown-item>
+                                <b-dropdown-item class="mb-lg-2"> <div class="d-flex align-items-center"><b-img class="mr-lg-4" :src="usersSvgUrl" /> Team</div></b-dropdown-item>
+                                <b-dropdown-item class="mb-lg-2"> <div class="d-flex align-items-center"><b-img class="mr-lg-4" :src="creditCardSvgUrl" /> Billing</div></b-dropdown-item>
+                                <b-dropdown-item class="mb-lg-2"> <div class="d-flex align-items-center"><b-img class="mr-lg-4" :src="userAdminSvgUrl" /> Admin </div></b-dropdown-item>
+
+                            </b-dropdown>
                         </b-nav-item>
 
                         <b-nav-item>
@@ -59,6 +72,34 @@
             },
             logoSvgUrl() {
                 return require('../../assets/images/logo.png')
+                // The path could be '../assets/img.png', etc., which depends on where your vue file is
+            },
+            dashboardSvgUrl() {
+                return require('../../assets/images/dashboard.svg')
+                // The path could be '../assets/img.png', etc., which depends on where your vue file is
+            },
+            notificationSvgUrl() {
+                return require('../../assets/images/notification.svg')
+                // The path could be '../assets/img.png', etc., which depends on where your vue file is
+            },
+            userSvgUrl() {
+                return require('../../assets/images/user-dropdown.svg')
+                // The path could be '../assets/img.png', etc., which depends on where your vue file is
+            },
+            usersSvgUrl() {
+                return require('../../assets/images/users.svg')
+                // The path could be '../assets/img.png', etc., which depends on where your vue file is
+            },
+            creditCardSvgUrl() {
+                return require('../../assets/images/credit-card.svg')
+                // The path could be '../assets/img.png', etc., which depends on where your vue file is
+            },
+            userAdminSvgUrl() {
+                return require('../../assets/images/user-admin-dropdown.svg')
+                // The path could be '../assets/img.png', etc., which depends on where your vue file is
+            },
+            supportSvgUrl() {
+                return require('../../assets/images/support.svg')
                 // The path could be '../assets/img.png', etc., which depends on where your vue file is
             }
         }

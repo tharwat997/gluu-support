@@ -80,41 +80,7 @@
                                             </b-card-header>
 
                                             <b-card-body>
-                                                <p>Hi Team,</p>
-
-                                                <p>  Reference link : <a href="#">"https://github.com/GluuFederation/gluu-docker/tree/3.1.3/examples/multi-hosts"</a></p>
-
-                                                <p>Above github link refer the multi host setup for digital ocean, but we need without digitail ocean,
-                                                    so we did manual docker setup in our server and followed the script which is return in github.</p>
-
-                                                <p>After installation of multi host gluu docker and container we facing the issue in nginx, it is return 502 Bad Gateway error.</p>
-
-
-                                                <p>then, when we debug the oxtrust container log it shows the below issue.</p>
-
-                                                <p>
-                                                    ERROR [main] [org.gluu.oxtrust.config.ConfigurationFactory] (ConfigurationFactory.java:298)
-                                                    Failed to load application configuration from
-                                                    file: /etc/gluu/conf/oxtrust-config.json ERROR [main]
-                                                    [org.gluu.oxtrust.config.ConfigurationFactory] (ConfigurationFactory.java:153)
-                                                    - Failed to load configuration from LDAP. Please fix it!!!.
-                                                </p>
-
-                                                <p>Paragraph file <a href="#">
-                                                    Resource.txt
-                                                </a></p>
-
-                                                <p>Website file <a href="#">
-                                                    Logo.pdf
-                                                </a></p>
-
-                                                <div class="mb-lg-3">
-                                                    <b-img :src="ticketDetailImage" class="img-fluid" />
-                                                </div>
-
-                                                <p class="mb-0"><a href="#">
-                                                    Website.jpg
-                                                </a></p>
+                                               <vue-mark-down :source="testingMarkDownString3"></vue-mark-down>
                                             </b-card-body>
 
                                             </b-card>
@@ -244,28 +210,8 @@
                                             </b-card-header>
 
                                             <b-card-body>
-                                                <p>Kesavan,</p>
 
-                                                <p>
-                                                    There will have to be some legwork done on your part, but you of course can run
-                                                    a multi-host example not using Digital Ocean. You'll have to fully understand
-                                                    docker-machine and docker swarm. A place to start is looking how the manager and
-                                                    workers are configured initially:
-                                                </p>
-
-                                                <p>
-                                                    <a href="#">https://github.com/GluuFederation/gluu-docker/blob/3.1.3/examples/multi-hosts/nodes.sh#L20
-                                                    </a>
-                                                </p>
-
-                                                <p>
-                                                    Then continue through that script to understand how to launch everything.
-                                                </p>
-
-                                                <p class="mb-0">Paragraph file<a href="#">
-                                                    Resource.txt
-                                                </a></p>
-
+                                                <vue-mark-down :html="true" :source='testingMarkDownString'></vue-mark-down>
                                             </b-card-body>
 
                                         </b-card>
@@ -318,11 +264,7 @@
 
                                             <b-card-body>
 
-                                                <p>
-                                                    It turns out this feature isn't working properly in 3.1.3 or 3.1.4. Please remove the entry you created in web UI,
-                                                    for now. If you need a custom nameid,
-                                                    you'll have to use manual approach as described in section "Configure NameID - Manual configuration" in this doc.
-                                                </p>
+                                                <vue-mark-down :html="true" :source='testingMarkDownString2'></vue-mark-down>
 
 
                                               <code-block>
@@ -416,12 +358,40 @@
     import Badge from "../../components/includes/badge/badge";
     import CodeBlock from "./code-block/code-block";
     import MarkdownEditor from "../../components/includes/markdown-editor/MarkdownEditor";
+    import VueMarkDown from 'vue-markdown'
 
     export default {
-        components: {MarkdownEditor, CodeBlock, Badge, ticketDetailSidebar},
+        components: {MarkdownEditor, CodeBlock, Badge, ticketDetailSidebar, VueMarkDown},
         name: "ticket-detail",
         data(){
             return{
+                testingMarkDownString:"Kesavan,\n" +
+                    "\n" +
+                    "There will have to be some legwork done on your part, but you of course can run a multi-host example not using Digital Ocean. You'll have to fully understand docker-machine and docker swarm. A place to start is looking how the manager and workers are configured initially:\n" +
+                    "\n" +
+                    "[https://github.com/GluuFederation/gluu-docker/blob/3.1.3/examples/multi-hosts/nodes.sh#L20](#)\n" +
+                    "\n" +
+                    "Then continue through that script to understand how to launch everything.\n" +
+                    "\n" +
+                    "Paragraph file [Resource.txt](#)",
+                testingMarkDownString2:"It turns out this feature isn't working properly in 3.1.3 or 3.1.4. Please remove the entry you created in web UI, for now. If you need a custom nameid, you'll have to use manual approach as described in section \"Configure NameID - Manual configuration\" in this doc.",
+                testingMarkDownString3:"Hi Team,\n" +
+                    "\n" +
+                    "Reference link : [\"https://github.com/GluuFederation/gluu-docker/tree/3.1.3/examples/multi-hosts\"](#)\n" +
+                    "\n" +
+                    "Above github link refer the multi host setup for digital ocean, but we need without digitail ocean, so we did manual docker setup in our server and followed the script which is return in github.\n" +
+                    "\n" +
+                    "After installation of multi host gluu docker and container we facing the issue in nginx, it is return 502 Bad Gateway error.\n" +
+                    "\n" +
+                    "then, when we debug the oxtrust container log it shows the below issue.\n" +
+                    "\n" +
+                    "ERROR \\[main\\] \\[org.gluu.oxtrust.config.ConfigurationFactory\\] (ConfigurationFactory.java:298) Failed to load application configuration from file: /etc/gluu/conf/oxtrust-config.json ERROR \\[main\\] \\[org.gluu.oxtrust.config.ConfigurationFactory\\] (ConfigurationFactory.java:153) - Failed to load configuration from LDAP. Please fix it!!!.\n" +
+                    "\n" +
+                    "Paragraph file [Resource.txt](#)\n" +
+                    "\n" +
+                    "Website file [Logo.pdf](#)\n" +
+                    "\n" +
+                    "[Website.jpg](#)",
                 orderByValue: {name: 'Most recent'},
                 orderByOptions: [
                     { name: 'Most recent'},

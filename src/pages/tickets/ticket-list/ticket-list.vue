@@ -1,8 +1,8 @@
 <template>
     <div class="ticket-list">
-
         <div id="search-container">
-            <b-row>
+
+            <b-row class="mb-lg-4">
                 <b-col lg="5" >
                     <div id="search-bar-container" class="d-flex align-items-center ">
                         <b-form-input v-model="text1" type="text" placeholder="Type the keyword" />
@@ -29,9 +29,24 @@
                     </div>
                 </b-col>
             </b-row>
+
+            <b-row>
+                <b-col cols="12">
+                    <div id="tags-container" class="d-flex">
+                        <div> {{arrayOfValuesIndex}} Results Found</div>
+                        <div class="d-flex flex-wrap">
+                            <div class="ml-lg-2" v-for="(item, index) in arrayOfValues" :key="index" v-model="arrayOfValuesIndex">
+                                {{arrayOfValueIndexCalc(index)}}
+                                <span class="multiselect__tag tags-container-tag-gluu"><span>{{item.name.name}}</span> <i aria-hidden="true" tabindex="1" class="multiselect__tag-icon"></i></span>
+                            </div>
+                        </div>
+                        <div class="ml-auto clear-all-btn">Clear all</div>
+                    </div>
+                </b-col>
+            </b-row>
         </div>
 
-        <div id="tickets-container" class="mt-lg-4">
+        <div id="tickets-container" class="mt-lg-2">
             <ticket :badges="[
                 {text:'New', color: 'lightblue'},
                 {text:'Pre-production', color:'purple'},
@@ -89,6 +104,7 @@
         components: {Ticket},
 
         props: {
+            arrayOfValues:Array
         },
         data (){
             return{
@@ -107,17 +123,13 @@
                     { name: 'User (a-z)'},
                     { name: 'User (z-a)'}
                 ],
-                currentPage: 1
+                currentPage: 1,
+                arrayOfValuesIndex:0
             }
         },
         methods: {
-            addTag (newTag) {
-                const tag = {
-                    name: newTag,
-                    code: newTag.substring(0, 2) + Math.floor((Math.random() * 10000000))
-                };
-                this.options.push(tag);
-                this.value.push(tag);
+            arrayOfValueIndexCalc(index){
+                this.arrayOfValuesIndex = index + 1;
             }
         },
         computed: {
