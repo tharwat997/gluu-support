@@ -16,10 +16,9 @@ Vue.component('v-icon', Icon);
 import MultiSelect from 'vue-multiselect'
 Vue.component('multi-select', MultiSelect);
 
-// import VCalendar from 'v-calendar';
-// import 'v-calendar/lib/v-calendar.min.css';
-// import 'v-calendar/componenets/DatePicker';
-// Vue.use(VCalendar);
+import VueRangedatePicker from 'vue-rangedate-picker'
+Vue.use(VueRangedatePicker);
+Vue.component('rangedate-picker', VueRangedatePicker);
 
 import Footer from './components/footer/footer';
 import Navbar from './components/nav/nav';

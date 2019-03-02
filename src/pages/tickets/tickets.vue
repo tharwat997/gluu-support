@@ -55,9 +55,12 @@
             </b-container>
         </div>
 
-        <b-container fluid>
-            <footer-section></footer-section>
-        </b-container>
+            <br>
+            <br>
+            <br>
+            <br>
+            <footer-section class="mt-lg-5"></footer-section>
+
     </div>
 
 </template>

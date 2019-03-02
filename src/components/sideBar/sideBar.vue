@@ -144,14 +144,20 @@
 
                 <b-form-group>
                     <label class="card-labels-gluu">Created date:</label>
-                    <multi-select
-                            class="select-tags-gluu single-select"
-                            v-model="createdDateFilterValue"
-                            :options="createdDateOptions"
-                            label="name"
-                            track-by="name"
-                            :show-labels="false"
-                    ></multi-select>
+                    <!--<multi-select-->
+                            <!--class="select-tags-gluu single-select"-->
+                            <!--v-model="createdDateFilterValue"-->
+                            <!--:options="createdDateOptions"-->
+                            <!--label="name"-->
+                            <!--track-by="name"-->
+                            <!--:show-labels="false"-->
+                    <!--&gt;</multi-select>-->
+
+
+                        <rangedate-picker
+                                compact="true"
+                                i18n="EN"
+                        ></rangedate-picker>
 
                 </b-form-group>
             </b-card-body>

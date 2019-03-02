@@ -296,6 +296,22 @@ body {
   @include text(16px, $font-color-base, $font-family-lato-Medium);
 }
 
+.input-date{
+  width: 100% !important;
+  border: 1px solid #EEF1F2 !important;
+  border-radius: 3px;
+}
+.input-date::after{
+  position: relative;
+  right: 0.7em;
+  color: #999;
+  margin-top: 0.8em;
+  border-style: solid;
+  border-width: 5px 5px 0;
+  border-color: #999 transparent transparent;
+  content: "" !important;
+}
+
 // Tickets Page Component //
 #tickets-page-container{
 
