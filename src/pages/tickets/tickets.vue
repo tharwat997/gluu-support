@@ -55,11 +55,11 @@
             </b-container>
         </div>
 
-            <br>
-            <br>
-            <br>
-            <br>
-            <footer-section class="mt-lg-5"></footer-section>
+        <br>
+        <br>
+        <br>
+        <br>
+        <footer-section class="mt-lg-5"></footer-section>
 
     </div>
 

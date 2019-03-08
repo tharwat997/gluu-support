@@ -16,6 +16,9 @@ Vue.component('v-icon', Icon);
 import MultiSelect from 'vue-multiselect'
 Vue.component('multi-select', MultiSelect);
 
+import vSelect from 'vue-select'
+Vue.component('v-select', vSelect);
+
 import VueRangedatePicker from 'vue-rangedate-picker'
 Vue.use(VueRangedatePicker);
 Vue.component('rangedate-picker', VueRangedatePicker);

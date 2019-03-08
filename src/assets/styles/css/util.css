@@ -1,0 +1,288 @@
+.dark-14-regular{
+    color: #181F1C;
+    font-family: "LatoWeb";
+    font-size: 14px;
+}
+.dark-14-semi{
+    color: #181F1C;
+    font-family: "LatoWebSemibold";
+    font-size: 14px;
+}
+.dark-14-medium{
+    color: #181F1C;
+    font-family: "LatoWebMedium";
+    font-size: 14px;
+}
+.dark-16-regular{
+    color: #181F1C;
+    font-family: "LatoWeb";
+    font-size: 16px;
+}
+.dark-16-semi{
+    color: #181F1C;
+    font-family: "LatoWebSemibold";
+    font-size: 16px;
+}
+.dark-16-medium{
+    color: #181F1C;
+    font-family: "LatoWebMedium";
+    font-size: 16px;
+}
+.dark-18-regular{
+    color: #181F1C;
+    font-family: "LatoWeb";
+    font-size: 18px;
+}
+.dark-18-semi{
+    color: #181F1C;
+    font-family: "LatoWebSemibold";
+    font-size: 18px;
+}
+.dark-18-medium{
+    color: #181F1C;
+    font-family: "LatoWebMedium";
+    font-size: 18px;
+}
+.dark-20-regular{
+    color: #181F1C;
+    font-family: "LatoWeb";
+    font-size: 20px;
+}
+.dark-20-semi{
+    color: #181F1C;
+    font-family: "LatoWebSemibold";
+    font-size: 20px;
+}
+.dark-20-medium{
+    color: #181F1C;
+    font-family: "LatoWebMedium";
+    font-size: 20px;
+}
+.dark-22-regular{
+    color: #181F1C;
+    font-family: "LatoWeb";
+    font-size: 22px;
+}
+.dark-22-semi{
+    color: #181F1C;
+    font-family: "LatoWebSemibold";
+    font-size: 22px;
+}
+.dark-22-medium{
+    color: #181F1C;
+    font-family: "LatoWebMedium";
+    font-size: 22px;
+}
+.dark-24-regular{
+    color: #181F1C;
+    font-family: "LatoWeb";
+    font-size: 24px;
+}
+.dark-24-semi{
+    color: #181F1C;
+    font-family: "LatoWebSemibold";
+    font-size: 24px;
+}
+.dark-24-medium{
+    color: #181F1C;
+    font-family: "LatoWebMedium";
+    font-size: 24px;
+}
+
+.semi-dark-12-regular{
+    color: #434947;
+    font-family: "LatoWeb";
+    font-size: 12px;
+}
+.semi-dark-12-semi{
+    color: #434947;
+    font-family: "LatoWebSemibold";
+    font-size: 12px;
+}
+.semi-dark-12-medium{
+    color: #434947;
+    font-family: "LatoWebMedium";
+    font-size: 12px;
+}
+.semi-dark-14-regular{
+    color: #434947;
+    font-family: "LatoWeb";
+    font-size: 14px;
+}
+.semi-dark-14-semi{
+    color: #434947;
+    font-family: "LatoWebSemibold";
+    font-size: 14px;
+}
+.semi-dark-14-medium{
+    color: #434947;
+    font-family: "LatoWebMedium";
+    font-size: 14px;
+}
+.semi-dark-15-regular{
+    color: #434947;
+    font-family: "LatoWeb";
+    font-size: 15px;
+}
+.semi-dark-15-semi{
+    color: #434947;
+    font-family: "LatoWebSemibold";
+    font-size: 15px;
+}
+.semi-dark-15-medium{
+    color: #434947;
+    font-family: "LatoWebMedium";
+    font-size: 15px;
+}
+.semi-dark-16-regular{
+    color: #434947;
+    font-family: "LatoWeb";
+    font-size: 16px;
+}
+.semi-dark-16-semi{
+    color: #434947;
+    font-family: "LatoWebSemibold";
+    font-size: 16px;
+}
+.semi-dark-16-medium{
+    color: #434947;
+    font-family: "LatoWebMedium";
+    font-size: 16px;
+}
+.semi-dark-18-regular{
+    color: #434947;
+    font-family: "LatoWeb";
+    font-size: 18px;
+}
+.semi-dark-18-semi{
+    color: #434947;
+    font-family: "LatoWebSemibold";
+    font-size: 18px;
+}
+.semi-dark-18-medium{
+    color: #434947;
+    font-family: "LatoWebMedium";
+    font-size: 18px;
+}
+
+.light-12-regular{
+    color: #777D7B;
+    font-family: "LatoWeb";
+    font-size: 12px;
+}
+.light-12-semi{
+    color: #777D7B;
+    font-family: "LatoWebSemibold";
+    font-size: 12px;
+}
+.light-12-medium{
+    color: #777D7B;
+    font-family: "LatoWebMedium";
+    font-size: 12px;
+}
+.light-14-regular{
+    color: #777D7B;
+    font-family: "LatoWeb";
+    font-size: 14px;
+}
+.light-14-semi{
+    color: #777D7B;
+    font-family: "LatoWebSemibold";
+    font-size: 14px;
+}
+.light-14-medium{
+    color: #777D7B;
+    font-family: "LatoWebMedium";
+    font-size: 14px;
+}
+.light-15-regular{
+    color: #777D7B;
+    font-family: "LatoWeb";
+    font-size: 15px;
+}
+.light-15-semi{
+    color: #777D7B;
+    font-family: "LatoWebSemibold";
+    font-size: 15px;
+}
+.light-15-medium{
+    color: #777D7B;
+    font-family: "LatoWebMedium";
+    font-size: 15px;
+}
+.light-16-regular{
+    color: #777D7B;
+    font-family: "LatoWeb";
+    font-size: 16px;
+}
+.light-16-semi{
+    color: #777D7B;
+    font-family: "LatoWebSemibold";
+    font-size: 16px;
+}
+.light-16-medium{
+    color: #777D7B;
+    font-family: "LatoWebMedium";
+    font-size: 16px;
+}
+
+.base-12-regular{
+    color: #00B372;
+    font-family: "LatoWeb";
+    font-size: 12px;
+}
+.base-12-semi{
+    color: #00B372;
+    font-family: "LatoWebSemibold";
+    font-size: 12px;
+}
+.base-12-medium{
+    color: #00B372;
+    font-family: "LatoWebMedium";
+    font-size: 12px;
+}
+.base-14-regular{
+    color: #00B372;
+    font-family: "LatoWeb";
+    font-size: 14px;
+}
+.base-14-semi{
+    color: #00B372;
+    font-family: "LatoWebSemibold";
+    font-size: 14px;
+}
+.base-14-medium{
+    color: #00B372;
+    font-family: "LatoWebMedium";
+    font-size: 14px;
+}
+.base-15-regular{
+    color: #00B372;
+    font-family: "LatoWeb";
+    font-size: 15px;
+}
+.base-15-semi{
+    color: #00B372;
+    font-family: "LatoWebSemibold";
+    font-size: 15px;
+}
+.base-15-medium{
+    color: #00B372;
+    font-family: "LatoWebMedium";
+    font-size: 15px;
+}
+.base-16-regular{
+    color: #00B372;
+    font-family: "LatoWeb";
+    font-size: 16px;
+}
+.base-16-semi{
+    color: #00B372;
+    font-family: "LatoWebSemibold";
+    font-size: 16px;
+}
+.base-16-medium{
+    color: #00B372;
+    font-family: "LatoWebMedium";
+    font-size: 16px;
+}

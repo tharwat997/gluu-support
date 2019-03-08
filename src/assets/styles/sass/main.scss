@@ -4,6 +4,7 @@ $base-color:#00B372;
 //Fonts
 $font-color-base: #181F1C;
 $font-family-base: "LatoWeb";
+$font-family-lato-bold: "LatoWebBold";
 $font-family-lato-Medium: "LatoWebMedium";
 $font-family-lato-semi-bold: "LatoWebSemibold";
 
@@ -37,6 +38,53 @@ body {
 
 .bs-tooltip-top .arrow::before, .bs-tooltip-auto[x-placement^="top"] .arrow::before{
   border-top-color:#ffffff;
+}
+
+.v-select{
+  .dropdown-toggle{
+    display: flex;
+    align-items: center;
+    height: fit-content;
+    padding: 0 14px !important;
+    .vs__selected-options{
+      margin-top: 0;
+      padding: 0 14px 0 0;
+      display: flex;
+      align-items: center;
+      span{
+        margin: 0;
+        padding: 0;
+        height: fit-content;
+      }
+      input{
+        margin-top: 0;
+      }
+    }
+    .v-select .vs__actions{
+      height: fit-content;
+    }
+    .clear{
+      display: none;
+    }
+    @extend %input-select;
+  }
+  .dropdown-toggle::after{
+    display: none;
+  }
+}
+
+.custom-radio{
+  .custom-control-input:focus ~ .custom-control-label::before{
+    -webkit-box-shadow: none;
+    box-shadow:none;
+  }
+  .custom-control-input:checked ~ .custom-control-label::before{
+    border-color: #00B372;
+    background-color: #ffffff;
+  }
+  .custom-control-input:checked ~ .custom-control-label::after{
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='rgb(0, 179, 114)'/%3e%3c/svg%3e ") ;
+  }
 }
 
 //SCSS COMPONENTS //
@@ -804,6 +852,444 @@ body {
         }
       }
 
+  }
+}
+
+// Profile Page Component //
+
+#profile-container{
+  .modal-content{
+    border:none;
+  }
+  .card-body{
+    padding: 0;
+  }
+  .card-header-gluu{
+    .card-title-gluu{
+      @include text(22px, $font-color-base, $font-family-lato-semi-bold);
+    }
+    button{
+      @extend %primary-btn;
+    }
+  }
+  #profile-content{
+    #notifications-tab{
+      #inner-tabs{
+        .nav.nav-tabs{
+          border-bottom: 1px solid #F4F4F4;
+          .nav-item {
+            margin-left: 0.5em;
+          }
+          .nav-item a {
+            border-top:none;
+            border-left:none;
+            border-right:none;
+            border-bottom: 1px solid #F4F4F4;
+            @include text(14px, $font-color-base, $font-family-lato-semi-bold);
+          }
+          .nav-item a.active {
+            color: $base-color;
+            border-top:none;
+            border-left:none;
+            border-right:none;
+            border-bottom: 1px solid $base-color;
+          }
+        }
+        .tab-content{
+          padding:0 24px;
+          margin-top: 2em !important;
+          #all-activities-tab{
+            .ticket-created-notification{
+              div:first-child{
+                @include text(15px,#434947,$font-family-lato-semi-bold);
+              }
+              .response{
+                padding:13px 20px;
+                border:1px solid #ECEEF1;
+                background-color: #F8F9FA;
+                border-radius: 4px;
+                div:nth-child(1){
+                  @include text(16px, $font-color-base, $font-family-lato-semi-bold);
+                }
+                div:nth-child(2){
+                  @include text(14px, $font-color-base, $font-family-base);
+                }
+                div:nth-child(3){
+                  @include text(14px, $font-color-base, $font-family-base);
+                  font-style: italic;
+                }
+              }
+            }
+            .ticket-responses-notification{
+              .reply-from{
+                @include text(15px, $base-color, $font-family-lato-semi-bold);
+                font-style: italic;
+              }
+              .response{
+                padding:13px 20px;
+                border:1px solid #ECEEF1;
+                background-color: #F8F9FA;
+                border-radius: 4px;
+                div:nth-child(1){
+                  @include text(16px, $font-color-base, $font-family-lato-semi-bold);
+                }
+                div:nth-child(2){
+                  @include text(14px, $font-color-base, $font-family-base);
+                }
+                div:nth-child(3){
+                  @include text(14px, $font-color-base, $font-family-base);
+                  font-style: italic;
+                }
+              }
+            }
+            .ticket-activity-status{
+              div:nth-child(1){
+                @include text(16px,$font-color-base,$font-family-lato-semi-bold);
+              }
+              div:nth-child(2){
+                @include text(14px,#4B504E,$font-family-base);
+                font-style: italic;
+              }
+            }
+          }
+          #your-activities-tab{
+            outline-color: transparent;
+            .ticket-created-notification{
+              .notification-event{
+                @include text(15px,#434947,$font-family-lato-semi-bold);
+                span{
+                  @include text(14px,#76827E,$font-family-lato-Medium)
+                }
+              }
+              .notification-event-time{
+                @include text(14px,#76827E,$font-family-lato-semi-bold);
+              }
+              .response{
+                padding:13px 20px;
+                border:1px solid #ECEEF1;
+                background-color: #F8F9FA;
+                border-radius: 4px;
+                @include text(14px,#434947, $font-family-base);
+                .response-heading{
+                  @include text(16px,$base-color,$font-family-lato-semi-bold);
+                }
+              }
+            }
+            .ticket-responses-notification{
+              .notification-event{
+                @include text(15px,#434947,$font-family-lato-semi-bold);
+                span{
+                  @include text(14px,#76827E,$font-family-lato-Medium)
+                }
+              }
+              .notification-event-time{
+                @include text(14px,#76827E,$font-family-lato-semi-bold);
+              }
+              .response{
+                padding:13px 20px;
+                border:1px solid #ECEEF1;
+                background-color: #F8F9FA;
+                border-radius: 4px;
+                div:nth-child(1){
+                  @include text(14px, #434947, $font-family-base);
+                }
+              }
+            }
+            .ticket-responses-notification-2{
+              .notification-event{
+                @include text(15px,#434947,$font-family-lato-semi-bold);
+                span{
+                  @include text(14px,#76827E,$font-family-lato-Medium)
+                }
+              }
+              .notification-event-time{
+                @include text(14px,#76827E,$font-family-lato-semi-bold);
+              }
+              .response{
+                padding:13px 20px;
+                border:1px solid #ECEEF1;
+                background-color: #F8F9FA;
+                border-radius: 4px;
+                .highlighted-area{
+                  background-color: #FFFFFF;
+                  border:1px solid #E9ECF0;
+                  border-radius: 3px;
+                  @include text(14px,#434947,$font-family-base);
+                  padding: 1em 2em;
+                }
+              }
+            }
+            .ticket-activity-status{
+              div:nth-child(1){
+                @include text(16px,$font-color-base,$font-family-lato-semi-bold);
+              }
+              div:nth-child(2){
+                @include text(14px,#4B504E,$font-family-base);
+                font-style: italic;
+              }
+            }
+          }
+        }
+      }
+      #manage-notifications-settings{
+        div:nth-child(1){
+          @include text(14px,#434947,$font-family-lato-semi-bold);
+        }
+        hr{
+          margin: 24px;
+          border-top: 1px solid #ECEEF1;
+        }
+        #notifications-settings-checkbox-container{
+          .notifications-settings-checkbox-column-content{
+            div{
+              margin:0.25em 0;
+              label{
+                @include text(15px,#434947,$font-family-lato-Medium);
+              }
+            }
+          }
+        }
+      }
+    }
+    #team-tab{
+      #organization-information-container{
+        hr{
+            border-top: 1px solid #ECEEF1;
+        }
+        #organization-information-container-header{
+         #organization-information-container-header-top-section{
+            div:nth-child(1){
+              @include text(22px, $font-color-base, $font-family-lato-bold);
+            }
+            div:nth-child(2){
+              @include text(14px,#434947,$font-family-base);
+            }
+            div:nth-child(3){
+              a{
+                @include text(13px, $base-color, $font-family-lato-semi-bold);
+                text-decoration-color: $base-color;
+              }
+            }
+           button{
+             @extend %primary-btn;
+             padding:5px 14px;
+             @include text(15px,#434947,$font-family-lato-semi-bold);
+           }
+          }
+          #organization-information-container-header-bottom-section{
+            div{
+              div:first-child{
+                @include text(14px,#777D7B,$font-family-lato-Medium);
+                width: fit-content;
+              }
+              div:nth-child(2){
+                @include text(16px,$font-color-base,$font-family-lato-semi-bold);
+                width: fit-content;
+                a{
+                  @include text(13px, $base-color, $font-family-lato-semi-bold);
+                  text-decoration-color: $base-color;
+                }
+              }
+            }
+          }
+        }
+        #organization-information-container-content{
+          #organization-information-container-content-header{
+            div:first-child{
+              div:nth-child(2){
+                @include text(14px,#434947,$font-family-lato-Medium);
+              }
+            }
+            button{
+              @extend %primary-btn;
+              padding:9px 14px;
+              @include text(15px,#434947,$font-family-lato-semi-bold);
+            }
+          }
+          #organization-information-container-content-body{
+            .table th{
+              border-top: none !important;
+            }
+            thead{
+              tr{
+                th:last-child{
+                  color:transparent;
+                }
+              }
+            }
+            tbody{
+              tr{
+                td:last-child{
+                  display: flex;
+                  align-items: center;
+                  justify-content: flex-end;
+                  img{
+                    cursor: pointer;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    #billing-tab{
+      #payment-method-container{
+        hr{
+          width: 100%;
+          border-top: 1px solid #F3F5F7;
+          margin:10px 0;
+        }
+        #add-new-card-button{
+          @include cta-btn-gluu;
+        }
+        .payment-method{
+
+          > div:first-child{
+            flex: 60%;
+          }
+          > div:nth-child(2){
+            flex: 30%;
+          }
+          > div:nth-child(3){
+            flex: 10%;
+          }
+        }
+      }
+      #billing-history-container{
+        #billing-history-table{
+          thead{
+            tr{
+              th{
+                background-color: #F3F5F7;
+                border-bottom: none;
+                @include text(15px,$font-color-base,$font-family-lato-Medium);
+              }
+            }
+          }
+          tbody{
+            tr{
+              td{
+                .billing-history-table-invoice-link{
+                  a{
+                    @include text(14px,$base-color,$font-family-lato-Medium);
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      #add-payment-method-container{
+        .submit-button{
+          @include cta-btn-gluu;
+        }
+        .cancel-button{
+          background-color: transparent;
+          @include text(16px,$font-color-base,$font-family-lato-Medium);
+          border:none;
+          margin-left: 0.5em;
+          box-shadow: none;
+        }
+      }
+    }
+  }
+  .profile-side-bar{
+    .card-body{
+      padding: 0;
+      .information-container{
+        .edit-icon-container{
+          position: absolute;
+          width: fit-content;
+          height: fit-content;
+          margin-left: 1.5em;
+          margin-top: 1em;
+          .edit-icon{
+            cursor: pointer;
+          }
+        }
+        .avatar-image{
+          width: 4em;
+          height: 4em;
+        }
+      }
+      .information-container div:nth-child(1){
+        @include text(20px, $font-color-base, $font-family-lato-Medium);
+      }
+      .information-container div:nth-child(2){
+        @include text(14px, #76827E, $font-family-lato-Medium);
+      }
+      .information-container div:nth-child(3){
+        @include text(14px, #434947, $font-family-lato-Medium);
+      }
+      .stats-container > div > div > div > div > div:first-child{
+        @include text(20px,$font-color-base,$font-family-lato-Medium);
+      }
+      .stats-container > div > div > div > div > div:nth-child(2){
+        @include text(14px,#76827E,$font-family-lato-Medium);
+      }
+      #tabs-container{
+        .nav-item{
+
+        }
+        .nav-item a.active{
+          border-left: 2px solid $base-color;
+          padding: 8px 2.38em;
+          @include text(16px, $base-color, $font-family-lato-semi-bold);
+        }
+        .nav-item a {
+          border: none;
+          border-radius: 0;
+          padding: 8px 2.5em;
+          @include text(16px, $font-color-base, $font-family-lato-semi-bold);
+        }
+      }
+    }
+
+  }
+  #editTeamProfile,
+  #inviteNewMember{
+    .modal-content{
+      padding: 30px 40px;
+      .modal-header{
+        padding:0;
+        border-bottom: none;
+        margin-bottom: 1.5em;
+        .modal-title{
+          @include text(22px,$font-color-base,$font-family-lato-Medium);
+        }
+        .close{
+          color: $font-color-base;
+        }
+      }
+      .modal-body{
+        padding:0;
+        .form-control-container{
+          label{
+            @include text(16px,$font-color-base,$font-family-lato-Medium);
+          }
+          input{
+            @extend %input-select;
+          }
+          span{
+            @include text(13px,#777D7B, $font-family-base);
+          }
+        }
+        button{
+          @include cta-btn-gluu;
+          padding:9px 21px;
+        }
+        .edit-icon{
+          position: absolute;
+          top: 2.5em;
+          left: 3em;
+          cursor: pointer;
+        }
+      }
+      .modal-footer{
+        display: none;
+      }
+    }
   }
 }
 
