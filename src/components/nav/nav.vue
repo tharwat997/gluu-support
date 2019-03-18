@@ -21,24 +21,37 @@
                         </b-nav-item>
 
                         <b-nav-item>
-                            <b-dropdown variant="link" no-caret id="support-nav-dropdown">
-                                <template slot="button-content"><b-img :src="infoUrl" rounded="circle" /><v-icon name="angle-down" class="ml-lg-2"></v-icon></template>
-                                <b-dropdown-item class="mb-lg-2"> <div class="d-flex align-items-center"><b-img class="mr-lg-4" :src="supportSvgUrl" /> Support Call</div></b-dropdown-item>
-                                <b-dropdown-item class="mb-lg-2"> <div class="d-flex align-items-center"><b-img class="mr-lg-4" :src="notificationSvgUrl" />Consultation</div></b-dropdown-item>
-                            </b-dropdown>
+                            <div class="d-flex flex-column text-md-center">
+                                <div>
+                                    <b-img  id="questions-sync" :src="infoUrl" rounded="circle" />
+                                </div>
+
+                                <div>
+                                    <b-popover v-on:show="$root.$emit('bv::hide::popover')" placement="bottomleft"  :show.sync="show" target="questions-sync"  id="support-nav-dropdown">
+                                        <b-dropdown-item class="mb-lg-2"> <div class="d-flex align-items-center"><b-img class="mr-lg-4" :src="supportSvgUrl" /> Support Call</div></b-dropdown-item>
+                                        <b-dropdown-item class="mb-lg-2"> <div class="d-flex align-items-center"><b-img class="mr-lg-4" :src="notificationSvgUrl" />Consultation</div></b-dropdown-item>
+                                    </b-popover>
+                                </div>
+                            </div>
                         </b-nav-item>
 
                         <b-nav-item>
-                            <b-dropdown variant="link" no-caret id="avatar-nav-dropdown">
-                                <template slot="button-content"><b-img :src="avatarUrl" rounded="circle"></b-img><v-icon name="angle-down" class="ml-lg-2"></v-icon></template>
-                                <b-dropdown-item class="mb-lg-2"> <div class="d-flex align-items-center"><b-img class="mr-lg-4" :src="dashboardSvgUrl" /> Dashboard</div></b-dropdown-item>
-                                <b-dropdown-item class="mb-lg-2"> <div class="d-flex align-items-center"><b-img class="mr-lg-4" :src="notificationSvgUrl" /> Alerts</div></b-dropdown-item>
-                                <b-dropdown-item class="mb-lg-2"> <div class="d-flex align-items-center"><b-img class="mr-lg-4" :src="userSvgUrl" /> My Profile</div></b-dropdown-item>
-                                <b-dropdown-item class="mb-lg-2"> <div class="d-flex align-items-center"><b-img class="mr-lg-4" :src="usersSvgUrl" /> Team</div></b-dropdown-item>
-                                <b-dropdown-item class="mb-lg-2"> <div class="d-flex align-items-center"><b-img class="mr-lg-4" :src="creditCardSvgUrl" /> Billing</div></b-dropdown-item>
-                                <b-dropdown-item class="mb-lg-2"> <div class="d-flex align-items-center"><b-img class="mr-lg-4" :src="userAdminSvgUrl" /> Admin </div></b-dropdown-item>
+                                <div class="d-flex flex-column text-md-center">
+                                    <div>
+                                        <b-img id="avatar-sync" :src="avatarUrl" rounded="circle" />
+                                    </div>
 
-                            </b-dropdown>
+                                    <div>
+                                        <b-popover v-on:show="$root.$emit('bv::hide::popover')" placement="bottomleft"  :show.sync="show" target="avatar-sync">
+                                            <b-dropdown-item class="mb-lg-2"> <div class="d-flex align-items-center"><b-img class="mr-lg-4" :src="dashboardSvgUrl" /> Dashboard</div></b-dropdown-item>
+                                            <b-dropdown-item class="mb-lg-2"> <div class="d-flex align-items-center"><b-img class="mr-lg-4" :src="notificationSvgUrl" /> Alerts</div></b-dropdown-item>
+                                            <b-dropdown-item class="mb-lg-2"> <div class="d-flex align-items-center"><b-img class="mr-lg-4" :src="userSvgUrl" /> My Profile</div></b-dropdown-item>
+                                            <b-dropdown-item class="mb-lg-2"> <div class="d-flex align-items-center"><b-img class="mr-lg-4" :src="usersSvgUrl" /> Team</div></b-dropdown-item>
+                                            <b-dropdown-item class="mb-lg-2"> <div class="d-flex align-items-center"><b-img class="mr-lg-4" :src="creditCardSvgUrl" /> Billing</div></b-dropdown-item>
+                                            <b-dropdown-item class="mb-lg-2"> <div class="d-flex align-items-center"><b-img class="mr-lg-4" :src="userAdminSvgUrl" /> Admin </div></b-dropdown-item>
+                                        </b-popover>
+                                    </div>
+                                </div>
                         </b-nav-item>
 
                         <b-nav-item>

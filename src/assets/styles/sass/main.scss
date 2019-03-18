@@ -36,11 +36,21 @@ body {
   padding: 15px;
 }
 
+button:focus{
+  box-shadow: none !important;
+  outline-color: transparent;
+}
+
+.multiselect__option--selected.multiselect__option--highlight{
+  background: $base-color;
+}
+
 .bs-tooltip-top .arrow::before, .bs-tooltip-auto[x-placement^="top"] .arrow::before{
   border-top-color:#ffffff;
 }
 
 .v-select{
+  max-height: 40px!important;
   .dropdown-toggle{
     display: flex;
     align-items: center;
@@ -55,6 +65,8 @@ body {
         margin: 0;
         padding: 0;
         height: fit-content;
+        color: #333 !important;
+        font-size: 16px !important;
       }
       input{
         margin-top: 0;
@@ -68,8 +80,50 @@ body {
     }
     @extend %input-select;
   }
+  .dropdown-menu{
+    min-width: 100% !important;
+    li{
+      background-color: white;
+      a{
+        color:black;
+      }
+    }
+    li.active{
+      a{
+        background-color: white;
+      }
+    }
+    li.highlight{
+      a{
+        background-color: $base-color ;
+      }
+    }
+  }
   .dropdown-toggle::after{
     display: none;
+  }
+}
+.popover.fade.bs-popover-bottom,
+.popover.fade.bs-popover-bottom.show{
+  max-width: 100%;
+  top: 20px !important;
+  border: none;
+  -webkit-box-shadow: 0px 20px 40px 0px rgba(221,228,226,1);
+  -moz-box-shadow: 0px 20px 40px 0px rgba(221,228,226,1);
+  box-shadow: 0px 20px 40px 0px rgba(221,228,226,1);
+  .arrow::before{
+    border-bottom-color: white !important;
+  }
+  .popover-body{
+    padding:0;
+    .dropdown-item{
+      margin-top: 0.5em;
+      margin-bottom:0.5em;
+    }
+    .dropdown-item:active{
+      background-color: #f8f9fa;
+      color:black;
+    }
   }
 }
 
@@ -83,7 +137,7 @@ body {
     background-color: #ffffff;
   }
   .custom-control-input:checked ~ .custom-control-label::after{
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='rgb(0, 179, 114)'/%3e%3c/svg%3e ") ;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='rgb(0, 179, 114)'/%3e%3c/svg%3e ") !important;
   }
 }
 
@@ -186,6 +240,11 @@ body {
   position: relative;
   bottom: 1px;
   padding: 0.5em 0 0 0;
+  .container {
+    height: 4em;
+    display: flex;
+    align-items: center;
+  }
 }
 
 #nav-tabs-container .dropdown-menu.show{
@@ -195,22 +254,34 @@ body {
     box-shadow: 0px 20px 40px 0px rgba(221,228,226,1);
 }
 
-#nav-tabs-container .dropdown-toggle-no-caret,
-#nav-tabs-container .dropdown-toggle-no-caret:focus{
+#nav-tabs-container .nav-item,
+#nav-tabs-container .nav-item:focus{
   text-decoration: none;
   transition: 0.2s;
   @include text(16px, $font-color-base, $font-family-lato-Medium);
   border-radius: 0;
   padding: 6px 0;
+  height: 3em;
 }
 
-#nav-tabs-container .dropdown-toggle-no-caret:hover{
+#nav-tabs-container .nav-item a > div:hover{
   border-bottom: 2px solid #00B372;
   text-decoration: none;
   transition: 0.2s;
   @include text(16px, $base-color, $font-family-lato-Medium);
 }
 
+
+#nav-tabs-container{
+  .nav-item{
+    .nav-link{
+      a{
+        @include text(16px, $font-color-base,$font-family-lato-Medium);
+        text-decoration: none;
+      }
+    }
+  }
+}
 
 #nav-tabs-container li > a{
   color: #181F1C;
@@ -240,7 +311,7 @@ body {
   svg{
     display: none;
   }
-  .dropdown-menu.show{
+  .popover.fade.bs-popover-bottom.show{
     left: -9em !important;
     top: 0.5em !important;
     border: none;
@@ -278,6 +349,8 @@ body {
   padding: 9px 14px;
 }
 
+
+
 #sidebar-container .dropdown-toggle::after{
   color: #C7CECB;
 }
@@ -295,6 +368,7 @@ body {
   border: 1px solid #00B372;
   border-radius: 3px;
   caret-color: #00B372;
+  //height: 40px !important;
 }
 
 .multiselect__single{
@@ -360,6 +434,9 @@ body {
   content: "" !important;
 }
 
+
+
+
 // Tickets Page Component //
 #tickets-page-container{
 
@@ -422,21 +499,28 @@ body {
 
 
       #order-by-select-container {
-
         label{
           margin-bottom: 0;
           margin-right: 0.5em;
           @include text(14px,$font-color-base,$font-family-lato-Medium);
         }
-
         .select-tags-gluu {
           border: 1px solid #DADDDE;
           width: 50%;
-
           .multiselect__select:before{
             display: initial;
+            z-index: 8;
+            top: 3px;
           }
+          .multiselect__select{
 
+            /* height: 100%; */
+            right: -0.2em;
+            text-align: center;
+            z-index: 1;
+            display: flex;
+            justify-content: center;
+          }
         }
 
       }
@@ -546,10 +630,16 @@ body {
 
         .select-tags-gluu {
           border: 1px solid #DADDDE;
-          width: auto;
+         width: 4em;
 
           .multiselect__select{
-            padding: 0;
+            width: 40px;
+            /* height: 100%; */
+            right: -0.2em;
+            text-align: center;
+            z-index: 1;
+            display: flex;
+            justify-content: center;
           }
 
           .multiselect__tags{
@@ -561,6 +651,9 @@ body {
 
           .multiselect__select:before{
             display: initial;
+            z-index: 8;
+            top: 3px;
+
           }
 
         }
@@ -570,49 +663,42 @@ body {
           margin-left: 0.5em;
         }
       }
-
-      #show-results-container{
-
-        .b-pagination{
-
-          margin-bottom: 0;
-
-          li:first-child,
-          li:nth-child(2),
-          li:nth-last-child(2){
-            display: none;
+      #pagination-container-2{
+        .ellipsis-container{
+          align-self: flex-end !important;
+          span{
+            color:#B8C1BD;
+            font-size: 15px;
+            font-family: "LatoWebMedium";
           }
-
-          .page-item{
-            margin: 0 0.38em;
-            .page-link{
-              width: 36px;
-              height: 36px;
-              border-radius: 3px;
-              border: 1px solid #daddde;
-              background-color: #ffffff;
-              @include text(15px, $font-color-base, $font-family-lato-Medium);
-            }
+        }
+        .pagination-container-2-buttons{
+          display: flex;
+          justify-content: center;
+          margin:0 0.25em;
+          height: 36px;
+          border-radius: 3px;
+          border: 1px solid #daddde;
+          background-color: #ffffff;
+          position: relative;
+          align-items: center;
+          line-height: 1.25;
+          width: 100%;
+          cursor: pointer;
+          a{
+            color: #181F1C;
+            font-size: 15px;
+            font-family: "LatoWebMedium";
+            text-decoration: none;
+            text-align: center;
           }
-
-          .page-item[role=separator]{
-            .page-link{
-              background-color: transparent;
-              border: none;
-              padding: 0 12px;
-              display: flex;
-              flex-direction: column;
-              justify-content: flex-end;
-            }
-          }
-
-          li:last-child{
-            .page-link{
-              width: 100%;
-              @include cta-btn-gluu();
-            }
-          }
-
+        }
+        #pagination-container-2-nextbtn{
+          width: 100%;
+          @include cta-btn-gluu();
+          padding: 5px 12px;
+          text-align: center;
+          cursor: pointer;
         }
       }
     }
@@ -623,7 +709,7 @@ body {
 // Ticket Details Page Component //
 
 #ticket-details-page-container{
-
+background-color: white;
   p{
     font-size: 15px;
   }
@@ -743,21 +829,40 @@ body {
       }
 
       .ticket-details-content-container{
+        #ticketDetailsEdit-popover-container{
+          .popover.fade.bs-popover-bottom,
+          .popover.fade.bs-popover-bottom.show{
+            max-width: 100%;
+            top: 20px !important;
+            border: 1px solid #F0F0F0;
+            -webkit-box-shadow: 0px 20px 40px 0px rgba(221,228,226,1);
+            -moz-box-shadow: 0px 20px 40px 0px rgba(221,228,226,1);
+            box-shadow: 0px 20px 40px 0px rgba(221,228,226,1);
+            .arrow::before{
+              border-bottom-color: #F0F0F0 !important;
+            }
+            .popover-body{
 
+              .dropdown-item{
+                margin-top: 0.5em;
+                margin-bottom:0.5em;
+              }
+              .dropdown-item:active{
+                background-color: #f8f9fa;
+                color:black;
+              }
+            }
+          }
+        }
         .see-more-link{
          margin-left: 1em;
           @include text(14px, $font-family-lato-semi-bold, #5D91F0)
         }
-
         .card{
-
             border: 1px solid #E3E7EA;
-
             .card-header{
-
               @include text(14px, #434947, $font-family-base);
               background-color: #F1F5F9;
-
               .ticket-details-content-copy-link-btn-gluu,
               .ticket-details-content-copy-link-btn-gluu:focus,
               .ticket-details-content-edit-btn-gluu:focus,
@@ -774,33 +879,24 @@ body {
                 cursor: pointer;
               }
             }
-
         }
 
       }
-
       .user-details-container{
-
         .card-left-side-gluu{
-
           padding: 0;
-
           img{
             width: 54px;
           }
-
           .card-left-side-info-name-gluu{
             @include text(13px, $font-color-base, $font-family-lato-semi-bold);
           }
-
           .card-left-side-info-company-gluu{
             @include text(12px, #787E7B, $font-family-base);
           }
-
           .card-left-side-info-type-gluu{
             @include text(12px, $font-color-base, $font-family-base);
           }
-
           .card-left-side-info-usertype-gluu{
             @include cta-btn-gluu;
             padding: 2px 10px;
@@ -810,11 +906,8 @@ body {
             font-weight: 400;
             width: fit-content;
           }
-
         }
-
       }
-
       #post-a-response-container{
         padding: 2em;
         background-color: #F8F9FB;
@@ -852,6 +945,97 @@ body {
         }
       }
 
+  }
+  #editTicket{
+    button{
+      outline: none;
+    }
+    .modal-dialog {
+      max-width: 700px;
+      .modal-content {
+        padding: 30px 40px;
+
+        .modal-header {
+          padding: 0;
+          border-bottom: none;
+          margin-bottom: 1.5em;
+
+          .modal-title {
+            @include text(22px, $font-color-base, $font-family-lato-Medium);
+          }
+
+          .close {
+            color: $font-color-base;
+          }
+        }
+
+        .modal-body {
+          padding: 0;
+          .auto-textarea-input.no-border.no-resize{
+            @include text(16px,#434947, $font-family-base);
+          }
+          .form-control-container {
+            label {
+              @include text(15px, $font-color-base, $font-family-lato-Medium);
+            }
+
+            input {
+              @extend %input-select;
+            }
+
+            span {
+              @include text(13px, #777D7B, $font-family-base);
+            }
+          }
+
+          .edit-ticket-modal-button-container {
+            button:nth-child(1) {
+              @include cta-btn-gluu;
+              padding: 9px 21px;
+              margin: 0 0.25em;
+
+            }
+
+            button:nth-child(2) {
+              border: 1px solid #E7E7E7;
+              background-color: #FFFFFF;
+              border-radius: 3px;
+              padding: 9px 21px;
+              margin: 0 0.25em;
+              color: #8C918E;
+            }
+          }
+
+          .edit-icon {
+            position: absolute;
+            top: 2.5em;
+            left: 3em;
+            cursor: pointer;
+          }
+        }
+
+        .modal-footer {
+          display: none;
+        }
+      }
+    }
+  }
+  #deleteTicketModal{
+    .modal-content {
+      width: fit-content;
+      .modal-body {
+        padding:24px;
+        button:first-child{
+          color: $base-color;
+        }
+        button {
+          @include text(16px, black, $font-family-lato-Medium);
+          margin: 0.25em;
+          background-color: transparent;
+          border:none;
+        }
+      }
+    }
   }
 }
 
@@ -1110,15 +1294,11 @@ body {
             .table th{
               border-top: none !important;
             }
-            thead{
-              tr{
-                th:last-child{
-                  color:transparent;
-                }
-              }
-            }
             tbody{
               tr{
+                td{
+                  border-top: none;
+                }
                 td:last-child{
                   display: flex;
                   align-items: center;
@@ -1181,6 +1361,7 @@ body {
         }
       }
       #add-payment-method-container{
+        width: 55%;
         .submit-button{
           @include cta-btn-gluu;
         }

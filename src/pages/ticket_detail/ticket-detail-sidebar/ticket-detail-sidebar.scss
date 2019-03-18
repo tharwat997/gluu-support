@@ -1,4 +1,7 @@
 #sidebar-container{
+  .penSVG{
+    cursor: pointer;
+  }
   .sidebar-item:first-child{
     padding-top: 0;
   }
@@ -14,9 +17,6 @@
       color: #181F1C;
       font-family: "LatoWebMedium";
       font-size: 16px;
-    }
-    .edit-svg-img{
-      cursor: pointer;
     }
   }
   .additional-product-container{
@@ -60,6 +60,154 @@
     }
     img{
       margin: 0 0.1em;
+    }
+  }
+  #assignedToPopOverContainer{
+    .arrow{
+      display: none;
+    }
+      .popover.fade.show.bs-popover-bottom{
+        .popover-body{
+          padding: 0 !important;
+        }
+        .popoverGlobalBorder{
+          border: 1px solid #F0F0F0 !important;
+          border-radius: 3px !important;
+        }
+        .multiselect__content-wrapper{
+          position: relative ;
+          border-top-left-radius: 0 ;
+          border-top-right-radius: 0 ;
+          border:none ;
+          margin-top: 1em;
+          .multiselect__option{
+            display: flex ;
+            align-items: center ;
+            padding: 8px 0  ;
+            font-size: 15px  ;
+            font-family: "LatoWebMedium";
+            img{
+              margin-right: 1em ;
+              margin-left: 1.5em;
+              width: 30px ;
+              height: 30px;
+            }
+          }
+          .multiselect__option--highlight{
+            padding: 8px 0 ;
+            background:none ;
+            color:#00B372 ;
+            font-size: 15px ;
+            font-family: "LatoWebMedium";
+            display: flex ;
+            align-items: center ;
+            img{
+              margin-right: 1em ;
+              margin-left: 1.5em;
+              width: 30px ;
+              height: 30px;
+            }
+          }
+        }
+        .select-tags-gluu{
+          border:none !important;
+        }
+        .select-tags-gluu.multiselect--active{
+          border: none !important;
+          .multiselect__tags{
+            border: 1px solid #00B372 !important;
+            border-radius: 3px !important;
+
+          }
+        }
+        .multiselect__tags{
+          border: 1px solid #EEF1F2 !important;
+          border-radius: 3px !important;
+          margin: 0 1.5em;
+          #assignedToTicketDetails{
+            margin-bottom: 0 !important;
+          }
+        }
+      }
+  }
+  #assignedTo-container{
+    div.popover-body > div{
+      margin-right: 5em
+    }
+    div.popover-body > div > div.mb-lg-2{
+      color:#7B7F7D;
+      font-size: 14px;
+      font-family: "LatoWeb";
+    }
+    .popover.fade.bs-popover-left,
+    .popover.fade.bs-popover-left.show{
+      max-width: 100%;
+      border:1px solid #F0F0F0;
+      -webkit-box-shadow: 0px 20px 40px 0px rgba(221,228,226,1);
+      -moz-box-shadow: 0px 20px 40px 0px rgba(221,228,226,1);
+      box-shadow: 0px 20px 40px 0px rgba(221,228,226,1);
+      .arrow::before{
+        border-bottom-color: #F0F0F0;
+        border-left-color: #F0F0F0;
+      }
+      .popover-body{
+        padding: 10px 20px;
+        .dropdown-item{
+          margin-top: 0.5em;
+          margin-bottom:0.5em;
+        }
+        .dropdown-item:active{
+          background-color: #f8f9fa;
+          color:black;
+        }
+      }
+    }
+    .assignedTo-container-top{
+      img{
+        height: 3.5em;
+        width: 3.5em;
+      }
+      div:nth-child(2){
+        margin-left: 0.5em;
+        color: #FFFFFF;
+        font-size: 14px;
+        font-family: "LatoWeb";
+        background-color: #00B372;
+        border-radius: 2px;
+        padding: 1px 9px;
+      }
+    }
+  }
+}
+
+#addAdditionalProductModal{
+  .modal-content{
+    .modal-body{
+      padding:24px;
+      label{
+        color:#181F1C;
+        font-family: "LatoWebSemibold";
+        font-size: 16px;
+      }
+      button:first-child{
+        background:#00B372;
+        color: #FFFFFF;
+        font-family: "LatoWeb";
+        font-size: 16px;
+        padding: 10px 12px;
+        border: none;
+        border-radius: 3px;
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+      }
+      button:nth-child(2){
+        color:#181F1C;
+        font-family: "LatoWeb";
+        font-size: 16px;
+        background-color: transparent;
+        border: none;
+        margin-left: 0.25em;
+      }
     }
   }
 }

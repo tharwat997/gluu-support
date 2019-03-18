@@ -3,7 +3,7 @@
     <mavon-editor
       ref="md"
       language="en"
-      v-model="value"
+      v-model="propValue"
       :toolbars="toolbars"
       placeholder="Write the answer"
       :subfield="false"
@@ -37,6 +37,9 @@ const baseURL =
 
 export default {
   name: 'markdown-editor',
+  props:{
+    propValue:String
+  },
   components: {
     mavonEditor
   },

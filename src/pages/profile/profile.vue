@@ -9,10 +9,10 @@
                        <profile-side-bar @clicked="onClickChild"></profile-side-bar>
                    </b-col>
 
-                   <b-col :class="{'mr-auto col-5' : addNewCard , 'col-8' :!addNewCard }">
+                   <b-col cols="8">
                        <div id="profile-content">
                            <div>
-                               <div v-if="NotificationsActive" id="notifications-tab">
+                               <div v-on:closeManageNotifications="manageNotifications = false" v-if="NotificationsActive" id="notifications-tab">
                                    <b-card class="card-gluu">
 
                                        <div class="d-flex align-items-center justify-content-between card-header-gluu mb-lg-4 ml-lg-4 mr-lg-4 mt-lg-4">
@@ -125,12 +125,12 @@
                                                <div class="w-100">
                                                    <div class="notifications-settings-checkbox-column-header">
                                                        <div class="mb-lg-3">
-                                                           <checkbox id="allTicketTypes" v-model="allTicketTypes">All ticket types</checkbox>
+                                                           <checkbox id="allTicketTypes">All ticket types</checkbox>
                                                        </div>
                                                    </div>
                                                    <div class="d-flex ml-lg-4 flex-column notifications-settings-checkbox-column-content">
                                                        <div>
-                                                           <checkbox id="productionOutages" :checked="productionOutages">Production Outages</checkbox>
+                                                           <checkbox id="productionOutages">Production Outages</checkbox>
                                                        </div>
                                                        <div>
                                                            <checkbox id="productionImpaired">Production Impaired</checkbox>
@@ -281,7 +281,7 @@
                                                                ></v-select>
                                                            </template>
 
-                                                           <template slot="Delete" slot-scope="data">
+                                                           <template slot="Action" slot-scope="data">
                                                                <div><b-img :src="deleteIconUrl" /></div>
                                                            </template>
                                                        </b-table>
@@ -394,8 +394,8 @@
                                        </b-card>
                                    </div>
                                    <div v-show="addNewCard">
-                                       <b-card class="card-gluu">
-                                           <div id="add-payment-method-container" class="card-header-gluu mb-lg-4 ml-lg-4 mr-lg-4 mt-lg-4">
+                                       <b-card class="card-gluu" id="add-payment-method-container">
+                                           <div class="card-header-gluu mb-lg-4 ml-lg-4 mr-lg-4 mt-lg-4">
 
                                                <div class="d-flex align-items-center justify-content-between mb-lg-4">
                                                    <div class="card-title-gluu">Add a new payment method</div>
@@ -510,10 +510,7 @@
             </b-modal>
         </div>
 
-        <br>
-        <br>
-        <br>
-        <br>
+
         <footer-section class="mt-lg-5"></footer-section>
     </div>
 </template>
@@ -549,13 +546,13 @@
                         Link:'Invoice'
                     }
                 ],
-                teamMembersfields: ['Name', 'Email', 'Role', 'Delete'],
+                teamMembersfields: ['Name', 'Email', 'Role', 'Action'],
                 teamMembersItems: [
                     {
                         Name: 'Nasir uddin',
                         Email: 'iamnasir360@gmail.com',
                         Role: ['Admin', 'User'],
-                        Delete:this.deleteIconUrl
+                        Action:this.deleteIconUrl
                     },
                     {
                         Name: 'Willaim lowe',
@@ -564,7 +561,7 @@
                             { value: 'Admin', text: 'Admin' },
                             { value: 'User', text: 'User' }
                         ],
-                        Delete:this.deleteIconUrl
+                        Action:this.deleteIconUrl
                     },
                     {
                         Name: 'Muhib zico',
@@ -573,7 +570,7 @@
                             { value: 'Admin', text: 'Admin' },
                             { value: 'User', text: 'User' }
                         ],
-                        Delete:this.deleteIconUrl
+                        Action:this.deleteIconUrl
                     }
                 ],
                 NotificationsActive :true,
@@ -605,6 +602,8 @@
                         this.securityActive = false;
                         this.accountActive = false;
                         this.adminActive = false;
+                        this.manageNotifications = false;
+                        this.addNewCard = false;
                         break;
                     case "Profile":
                         this.NotificationsActive = false;
@@ -615,6 +614,8 @@
                         this.securityActive = false;
                         this.accountActive = false;
                         this.adminActive = false;
+                        this.manageNotifications = false;
+                        this.addNewCard = false;
                         break;
                     case "Team":
                         this.NotificationsActive = false;
@@ -625,6 +626,8 @@
                         this.securityActive = false;
                         this.accountActive = false;
                         this.adminActive = false;
+                        this.manageNotifications = false;
+                        this.addNewCard = false;
                         break;
                     case "Partners":
                         this.NotificationsActive = false;
@@ -635,6 +638,8 @@
                         this.securityActive = false;
                         this.accountActive = false;
                         this.adminActive = false;
+                        this.manageNotifications = false;
+                        this.addNewCard = false;
                         break;
                     case "Billing":
                         this.NotificationsActive = false;
@@ -645,6 +650,8 @@
                         this.securityActive = false;
                         this.accountActive = false;
                         this.adminActive = false;
+                        this.manageNotifications = false;
+                        this.addNewCard = false;
                         break;
                     case "Security":
                         this.NotificationsActive = false;
@@ -655,6 +662,8 @@
                         this.securityActive = true;
                         this.accountActive = false;
                         this.adminActive = false;
+                        this.manageNotifications = false;
+                        this.addNewCard = false;
                         break;
                     case "Admin":
                         this.NotificationsActive = false;
@@ -665,6 +674,8 @@
                         this.securityActive = false;
                         this.accountActive = false;
                         this.adminActive = true;
+                        this.manageNotifications = false;
+                        this.addNewCard = false;
                         break;
                     case "Account":
                         this.NotificationsActive = false;
@@ -675,6 +686,8 @@
                         this.securityActive = false;
                         this.accountActive = true;
                         this.adminActive = false;
+                        this.manageNotifications = false;
+                        this.addNewCard = false;
                         break;
                 }
             }

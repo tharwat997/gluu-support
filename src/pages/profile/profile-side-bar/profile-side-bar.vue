@@ -43,14 +43,14 @@
 
             <div>
                 <b-tabs  vertical id="tabs-container" class="mb-lg-3">
-                    <b-tab title="Notifications" class="Tab notifications" active @click="emitFunction('Notification')"></b-tab>
-                    <b-tab title="Profile" class="Tab profile" @click="emitFunction('Profile')"></b-tab>
-                    <b-tab title="Team" class="Tab team" @click="emitFunction('Team')"></b-tab>
-                    <b-tab title="Partners" class="Tab partners" @click="emitFunction('Partners')"></b-tab>
-                    <b-tab title="Billing" class="Tab billing" @click="emitFunction('Billing')"></b-tab>
-                    <b-tab title="Account" class="Tab account" @click="emitFunction('Account')"></b-tab>
-                    <b-tab title="Security" class="Tab security" @click="emitFunction('Security')"></b-tab>
-                    <b-tab title="Admin" class="Tab admin" @click="emitFunction('Admin')"></b-tab>
+                    <b-tab title="Notifications" class="Tab notifications" active @click="emitFunction('Notification'), closeManageNotifications()"></b-tab>
+                    <b-tab title="Profile" class="Tab profile" @click="emitFunction('Profile'); closeManageNotifications()"></b-tab>
+                    <b-tab title="Team" class="Tab team" @click="emitFunction('Team'); closeManageNotifications()"></b-tab>
+                    <b-tab title="Partners" class="Tab partners" @click="emitFunction('Partners'); closeManageNotifications()"></b-tab>
+                    <b-tab title="Billing" class="Tab billing" @click="emitFunction('Billing'); closeManageNotifications()"></b-tab>
+                    <b-tab title="Account" class="Tab account" @click="emitFunction('Account'); closeManageNotifications()"></b-tab>
+                    <b-tab title="Security" class="Tab security" @click="emitFunction('Security'); closeManageNotifications()"></b-tab>
+                    <b-tab title="Admin" class="Tab admin" @click="emitFunction('Admin'); closeManageNotifications()"></b-tab>
                 </b-tabs>
             </div>
 
@@ -66,6 +66,9 @@
         methods:{
             emitFunction(activeItem){
                 this.$emit('clicked', activeItem);
+            },
+            closeManageNotifications(){
+                this.$parent.$emit('closeManageNotifications');
             }
         },
         computed: {

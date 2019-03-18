@@ -31,7 +31,7 @@
                                 <b-col cols="3">
                                     <div class="ticket-details-subheader d-flex justify-content-end">
                                         <b-img v-b-tooltip.hover title="Visible to staff and colleagues" :src="padlockSvgUrl"/>
-                                        <b-button class="primary-btn-gluu">Edit</b-button>
+                                        <b-button v-b-modal.editTicket class="ml-lg-2 primary-btn-gluu">Edit</b-button>
                                     </div>
                                 </b-col>
                             </b-row>
@@ -71,10 +71,22 @@
                                             <b-card-header class="d-flex align-items-center justify-content-between">
 
                                                 <div>30 Aug 2018 at 2:24 PM GMT</div>
-                                                <div>
+                                                <div class="d-flex align-items-center" id="ticketDetailsEdit-popover-container">
                                                     <b-button class="ticket-details-content-edit-btn-gluu">Edit</b-button>
                                                     <b-button class="ticket-details-content-copy-link-btn-gluu">Copy Link</b-button>
-                                                    <b-img class="ticket-details-content-ellipsis-icon-gluu" :src="ellipsisSvgUrl" />
+                                                    <div class="d-flex flex-column text-md-center">
+                                                        <div id="ticketDetailsEdit-sync" >
+                                                            <b-img class="ticket-details-content-ellipsis-icon-gluu" :src="ellipsisSvgUrl" />
+                                                        </div>
+
+                                                        <div>
+                                                            <b-popover v-on:show="$root.$emit('bv::hide::popover')" container="ticketDetailsEdit-popover-container" placement="bottomleft"  :show.sync="show" target="ticketDetailsEdit-sync">
+                                                                <b-dropdown-item>Copy Link</b-dropdown-item>
+                                                                <b-dropdown-item>Open new ticket</b-dropdown-item>
+                                                                <b-dropdown-item v-b-modal.deleteTicketModal>Delete</b-dropdown-item>
+                                                            </b-popover>
+                                                        </div>
+                                                    </div>
                                                 </div>
 
                                             </b-card-header>
@@ -342,11 +354,56 @@
             </b-container>
 
         </div>
-        <br>
-        <br>
-        <br>
-        <br>
+
         <footer-section class="mt-lg-5"></footer-section>
+
+        <div>
+            <b-modal id="editTicket" class="card-gluu" title="Edit ticket information" centered>
+
+
+                <div class="form-control-container d-flex flex-column mb-lg-3">
+                    <label for="name2" class="mb-lg-1">Subject</label>
+                    <input type="text" name="name" id="name2" class="form-control" value="Installing Gluu server using kubernetes on AWS">
+                </div>
+
+                <div class="form-control-container d-flex flex-column mb-lg-4">
+                    <label for="name2" class="mb-lg-1">Description</label>
+                    <MarkdownEditor propValue="Hi Karsten, I think there were some reasons ( sorry, can't recall all of them ) for which we came to Oracle JDK, I am assigning Java dev to get the best answer. However.. one thing I can suggest, it's better to stick with Gluu's own components, the more your invite alien pieces... the more it will become harder to troubleshoot.">
+
+                    </MarkdownEditor>
+                </div>
+
+                <div class="form-control-container d-flex mb-lg-4">
+                    <div class="mr-lg-3">
+                        Visibility:
+                    </div>
+                    <b-form-radio class="mr-lg-5 " value="A" v-model="radioButtonsSelected" name="card-payment">
+                        Private
+                    </b-form-radio>
+                    <b-form-radio value="B" v-model="radioButtonsSelected" name="paypal-payment">
+                        Public
+                    </b-form-radio>
+                </div>
+
+
+                <div class="form-control-container d-flex edit-ticket-modal-button-container">
+                    <button>Save</button>
+                    <button>Cancel</button>
+                </div>
+
+            </b-modal>
+            <b-modal id="deleteTicketModal" class="card-gluu" hide-footer="true" hide-header="true" centered>
+
+                <div class="form-control-container d-flex flex-column mb-lg-3">
+                    <div class="dark-18-medium">Are you sure you want to delete this ticket?</div>
+                </div>
+                <div class="form-control-container d-flex">
+                    <b-button class="btn" @click="hideDeleteModal()">No</b-button>
+                    <b-button class="btn">Delete</b-button>
+                </div>
+
+            </b-modal>
+        </div>
 
     </div>
 
@@ -399,6 +456,12 @@
                     { name: 'User (a-z)'},
                     { name: 'User (z-a)'}
                 ],
+                radioButtonsSelected:'A'
+            }
+        },
+        methods: {
+            hideDeleteModal() {
+                this.$root.$emit('bv::hide::modal','deleteTicketModal', '#btnShow');
             }
         },
         computed:{

@@ -8,29 +8,55 @@
                         <b-col cols="12">
                             <b-nav class="align-items-center">
                                 <b-nav-item>
-                                    <b-dropdown variant="link" no-caret>
-                                        <template slot="button-content">My assignment<v-icon name="angle-down" class="ml-lg-2"></v-icon></template>
-                                        <b-dropdown-item>First Action</b-dropdown-item>
-                                        <b-dropdown-item>First Action</b-dropdown-item>
-                                        <b-dropdown-item>First Action</b-dropdown-item>
-                                    </b-dropdown>
+
+                                    <div class="d-flex flex-column text-md-center">
+                                        <div id="myAssignment-sync" >
+                                            My assignment <v-icon name="angle-down" class="ml-lg-2"></v-icon>
+                                        </div>
+
+                                        <div>
+                                            <b-popover v-on:show="$root.$emit('bv::hide::popover')" placement="bottomleft"  :show.sync="show" target="myAssignment-sync">
+                                                <b-dropdown-item>First Action</b-dropdown-item>
+                                                <b-dropdown-item>First Action</b-dropdown-item>
+                                                <b-dropdown-item>First Action</b-dropdown-item>
+                                            </b-popover>
+                                        </div>
+                                    </div>
+
                                 </b-nav-item>
-                                <b-nav-item>Unassigned</b-nav-item>
+
+                                <b-nav-item><a href="#" >Unassigned</a></b-nav-item>
+
                                 <b-nav-item>
-                                    <b-dropdown variant="link" no-caret>
-                                        <template slot="button-content">All tickets<v-icon name="angle-down" class="ml-lg-2"></v-icon></template>
-                                        <b-dropdown-item>First Action</b-dropdown-item>
-                                        <b-dropdown-item>First Action</b-dropdown-item>
-                                        <b-dropdown-item>First Action</b-dropdown-item>
-                                    </b-dropdown>
+                                    <div class="d-flex flex-column text-md-center">
+                                        <div id="allTickets-sync" >
+                                            All tickets <v-icon name="angle-down" class="ml-lg-2"></v-icon>
+                                        </div>
+
+                                        <div>
+                                            <b-popover v-on:show="$root.$emit('bv::hide::popover')" placement="bottomleft"  :show.sync="show" target="allTickets-sync">
+                                                <b-dropdown-item>First Action</b-dropdown-item>
+                                                <b-dropdown-item>First Action</b-dropdown-item>
+                                                <b-dropdown-item>First Action</b-dropdown-item>
+                                            </b-popover>
+                                        </div>
+                                    </div>
                                 </b-nav-item>
+
                                 <b-nav-item>
-                                    <b-dropdown variant="link" no-caret>
-                                        <template slot="button-content">My tickets<v-icon name="angle-down" class="ml-lg-2"></v-icon></template>
-                                        <b-dropdown-item>First Action</b-dropdown-item>
-                                        <b-dropdown-item>First Action</b-dropdown-item>
-                                        <b-dropdown-item>First Action</b-dropdown-item>
-                                    </b-dropdown>
+                                    <div class="d-flex flex-column text-md-center">
+                                        <div id="myTickets-sync" >
+                                            My tickets <v-icon name="angle-down" class="ml-lg-2"></v-icon>
+                                        </div>
+
+                                        <div>
+                                            <b-popover v-on:show="$root.$emit('bv::hide::popover')" placement="bottomleft"  :show.sync="show" target="myTickets-sync">
+                                                <b-dropdown-item>First Action</b-dropdown-item>
+                                                <b-dropdown-item>First Action</b-dropdown-item>
+                                                <b-dropdown-item>First Action</b-dropdown-item>
+                                            </b-popover>
+                                        </div>
+                                    </div>
                                 </b-nav-item>
                             </b-nav>
                         </b-col>
@@ -55,10 +81,7 @@
             </b-container>
         </div>
 
-        <br>
-        <br>
-        <br>
-        <br>
+
         <footer-section class="mt-lg-5"></footer-section>
 
     </div>

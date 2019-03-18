@@ -154,10 +154,8 @@
                     <!--&gt;</multi-select>-->
 
 
-                        <rangedate-picker
-                                compact="true"
-                                i18n="EN"
-                        ></rangedate-picker>
+
+                    <date-picker></date-picker>
 
                 </b-form-group>
             </b-card-body>
@@ -168,12 +166,13 @@
 </template>
 
 <script>
-
+import datePicker from '../datepicker/datepicker';
 
     export default {
 
         props: {
         },
+        components:{datePicker},
         data (){
             return {
                 selectedDate: {

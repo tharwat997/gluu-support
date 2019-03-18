@@ -67,6 +67,7 @@
                     <div id="pagination-container" class="d-flex align-items-center ">
                         <label class="card-labels-gluu">Show:</label>
                         <multi-select
+                                id="showMultiSelect"
                                 class="select-tags-gluu"
                                 v-model="showResultsValue"
                                 :options="showResultsOptions"
@@ -83,13 +84,29 @@
                 </b-col>
 
                 <b-col lg="5" offset-lg="2">
-                    <div id="show-results-container" class="d-flex align-items-center justify-content-end">
-                        <b-pagination-nav  :number-of-pages="10" v-model="currentPage"
-                                                  last-text="Next"
-                                                  align="right"
-                        />
-
-                    </div>
+                        <div id="pagination-container-2" class="d-flex align-items-center">
+                            <div class="pagination-container-2-buttons">
+                                <a href="">1</a>
+                            </div>
+                            <div class="pagination-container-2-buttons">
+                                <a href="">2</a>
+                            </div>
+                            <div class="pagination-container-2-buttons">
+                                <a href="">3</a>
+                            </div>
+                            <div class="ellipsis-container">
+                                <span>.......</span>
+                            </div>
+                            <div class="pagination-container-2-buttons">
+                                <a href="">14</a>
+                            </div>
+                            <div class="pagination-container-2-buttons">
+                                <a  href="">15</a>
+                            </div>
+                            <div id="pagination-container-2-nextbtn">
+                                Next
+                            </div>
+                        </div>
                 </b-col>
             </b-row>
 
