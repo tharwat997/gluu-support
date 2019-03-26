@@ -89,6 +89,38 @@
     font-size: 24px;
 }
 
+.dark-30-regular{
+    color: #181F1C;
+    font-family: "LatoWeb";
+    font-size: 30px;
+}
+.dark-30-semi{
+    color: #181F1C;
+    font-family: "LatoWebSemibold";
+    font-size: 30px;
+}
+.dark-30-medium{
+    color: #181F1C;
+    font-family: "LatoWebMedium";
+    font-size: 30px;
+}
+
+.dark-36-regular{
+    color: #181F1C;
+    font-family: "LatoWeb";
+    font-size: 36px;
+}
+.dark-36-semi{
+    color: #181F1C;
+    font-family: "LatoWebSemibold";
+    font-size: 36px;
+}
+.dark-36-medium{
+    color: #181F1C;
+    font-family: "LatoWebMedium";
+    font-size: 36px;
+}
+
 .semi-dark-12-regular{
     color: #434947;
     font-family: "LatoWeb";

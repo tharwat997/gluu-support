@@ -1,0 +1,20 @@
+#create-ticket-sidebar-container{
+    .sidebar-item:first-child{
+        margin-top: 0;
+    }
+    .sidebar-item{
+        border-bottom: 1px solid #E5E7E9;
+        margin: 1em 0;
+        padding-bottom:0.5em;
+        .header-text{
+            color:#434947;
+            font-size: 14px;
+            font-family: "LatoWeb";
+        }
+        .inner-text{
+            color:#181F1C;
+            font-size: 16px;
+            font-family: "LatoWebMedium";
+        }
+    }
+}

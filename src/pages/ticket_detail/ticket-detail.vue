@@ -489,7 +489,5 @@
 </script>
 
 <style module>
-    body{
-        background-color: #ffffff;
-    }
+
 </style>

@@ -66,6 +66,7 @@
     .arrow{
       display: none;
     }
+      .bs-popover-top,
       .popover.fade.show.bs-popover-bottom{
         .popover-body{
           padding: 0 !important;
@@ -86,15 +87,32 @@
             padding: 8px 0  ;
             font-size: 15px  ;
             font-family: "LatoWebMedium";
+            border-bottom: 1px solid #F5F5F5;
+            border-top: 1px solid #F5F5F5;
             img{
               margin-right: 1em ;
               margin-left: 1.5em;
               width: 30px ;
               height: 30px;
             }
+            .greenTickSvg{
+              display: none;
+            }
+          }
+          .multiselect__option:first-child{
+            border-top: unset;
+          }
+          .multiselect__option--selected{
+            background-color: white;
+            color: #00B372;
+            .greenTickSvg{
+              display: block;
+            }
           }
           .multiselect__option--highlight{
             padding: 8px 0 ;
+            border-bottom: 1px solid #F5F5F5;
+            border-top: 1px solid #F5F5F5;
             background:none ;
             color:#00B372 ;
             font-size: 15px ;
@@ -107,6 +125,9 @@
               width: 30px ;
               height: 30px;
             }
+          }
+          .multiselect__option--highlight:first-child{
+            border-top: unset;
           }
         }
         .select-tags-gluu{
@@ -124,11 +145,232 @@
           border: 1px solid #EEF1F2 !important;
           border-radius: 3px !important;
           margin: 0 1.5em;
+          #categoryMultiSelect,
           #assignedToTicketDetails{
             margin-bottom: 0 !important;
           }
         }
       }
+  }
+  #categoryPopoverContainer{
+    .arrow{
+      display: none;
+    }
+    .bs-popover-top,
+    .popover.fade.show.bs-popover-bottom{
+      .popover-body{
+        padding: 0 !important;
+      }
+      .popoverGlobalBorder{
+        border: 1px solid #F0F0F0 !important;
+        border-radius: 3px !important;
+      }
+      .multiselect__content-wrapper{
+        position: relative ;
+        border-top-left-radius: 0 ;
+        border-top-right-radius: 0 ;
+        border:none ;
+        margin-top: 1em;
+        .multiselect__option{
+          display: flex ;
+          align-items: center ;
+          padding: 8px 0  ;
+          font-size: 15px  ;
+          font-family: "LatoWebMedium";
+          border-bottom: 1px solid #F5F5F5;
+          border-top: 1px solid #F5F5F5;
+          img{
+            margin-right: 1em ;
+            margin-left: 1.5em;
+            width: 30px ;
+            height: 30px;
+          }
+          .greenTickSvg{
+            display: none;
+          }
+          svg:first-child{
+            margin-right: 1em ;
+            margin-left: 1.5em;
+            width: 30px ;
+            height: 30px;
+          }
+        }
+        .multiselect__option:first-child{
+          border-top: unset;
+        }
+        .multiselect__option--selected{
+          background-color: white;
+          color: #00B372;
+          .greenTickSvg{
+            display: block;
+          }
+          svg:first-child g  path{
+            margin-right: 1em ;
+            margin-left: 1.5em;
+            width: 30px ;
+            height: 30px;
+            fill: #00B372;
+          }
+        }
+        .multiselect__option--highlight{
+          padding: 8px 0 ;
+          border-bottom: 1px solid #F5F5F5;
+          border-top: 1px solid #F5F5F5;
+          background:none ;
+          color:#00B372 ;
+          font-size: 15px ;
+          font-family: "LatoWebMedium";
+          display: flex ;
+          align-items: center ;
+          img{
+            margin-right: 1em ;
+            margin-left: 1.5em;
+            width: 30px ;
+            height: 30px;
+          }
+          svg:first-child g  path{
+            margin-right: 1em ;
+            margin-left: 1.5em;
+            width: 30px ;
+            height: 30px;
+            fill: #00B372;
+          }
+        }
+        .multiselect__option--highlight:first-child{
+          border-top: unset;
+        }
+      }
+      .select-tags-gluu{
+        border:none !important;
+      }
+      .select-tags-gluu.multiselect--active{
+        border: none !important;
+        .multiselect__tags{
+          border: 1px solid #00B372 !important;
+          border-radius: 3px !important;
+
+        }
+      }
+      .multiselect__tags{
+        border: 1px solid #EEF1F2 !important;
+        border-radius: 3px !important;
+        margin: 0 1.5em;
+        #categoryMultiSelect,
+        #assignedToTicketDetails{
+          margin-bottom: 0 !important;
+        }
+      }
+    }
+  }
+  #gluuVersionPopoverContainer{
+    .arrow{
+      display: none;
+    }
+    .bs-popover-top,
+    .popover.fade.show.bs-popover-bottom{
+      .popover-body{
+        padding: 0 !important;
+      }
+      .popoverGlobalBorder{
+        border: 1px solid #F0F0F0 !important;
+        border-radius: 3px !important;
+      }
+      .multiselect__content-wrapper{
+        position: relative ;
+        border-top-left-radius: 0 ;
+        border-top-right-radius: 0 ;
+        border:none ;
+        margin-top: 1em;
+        .multiselect__option{
+          display: flex ;
+          align-items: center ;
+          padding: 8px 0  ;
+          font-size: 15px  ;
+          font-family: "LatoWebMedium";
+          border-bottom: 1px solid #F5F5F5;
+          border-top: 1px solid #F5F5F5;
+          img{
+            margin-right: 1em ;
+            margin-left: 1.5em;
+            width: 30px ;
+            height: 30px;
+          }
+          .greenTickSvg{
+            display: none;
+          }
+          svg:first-child{
+            margin-right: 1em ;
+            margin-left: 1.5em;
+            width: 30px ;
+            height: 30px;
+          }
+        }
+        .multiselect__option:first-child{
+          border-top: unset;
+        }
+        .multiselect__option--selected{
+          background-color: white;
+          color: #00B372;
+          .greenTickSvg{
+            display: block;
+          }
+          svg:first-child g  path{
+            margin-right: 1em ;
+            margin-left: 1.5em;
+            width: 30px ;
+            height: 30px;
+            fill: #00B372;
+          }
+        }
+        .multiselect__option--highlight{
+          padding: 8px 0 ;
+          border-bottom: 1px solid #F5F5F5;
+          border-top: 1px solid #F5F5F5;
+          background:none ;
+          color:#00B372 ;
+          font-size: 15px ;
+          font-family: "LatoWebMedium";
+          display: flex ;
+          align-items: center ;
+          img{
+            margin-right: 1em ;
+            margin-left: 1.5em;
+            width: 30px ;
+            height: 30px;
+          }
+          svg:first-child g  path{
+            margin-right: 1em ;
+            margin-left: 1.5em;
+            width: 30px ;
+            height: 30px;
+            fill: #00B372;
+          }
+        }
+        .multiselect__option--highlight:first-child{
+          border-top: unset;
+        }
+      }
+      .select-tags-gluu{
+        border:none !important;
+      }
+      .select-tags-gluu.multiselect--active{
+        border: none !important;
+        .multiselect__tags{
+          border: 1px solid #00B372 !important;
+          border-radius: 3px !important;
+
+        }
+      }
+      .multiselect__tags{
+        border: 1px solid #EEF1F2 !important;
+        border-radius: 3px !important;
+        margin: 0 1.5em;
+        #gluuVersionMultiSelect{
+          margin-bottom: 0 !important;
+
+        }
+      }
+    }
   }
   #assignedTo-container{
     div.popover-body > div{
@@ -179,7 +421,143 @@
     }
   }
 }
+#statusPopoverContainer,
+#issueTypePopoverContainer{
+  .dropdown-item:active{
+    color: unset;
+    background-color: unset;
+  }
+  .purple-color{
+    color:#B736FF;
+  }
+  .green-color{
+    color:#41D222;
+  }
+  .red-color{
+    color:#FF3535;
+  }
+  .blue-color{
+    color:#5967FF;
+  }
+  .orange-color{
+     color:#FF8336;
+   }
+  .arrow{
+    display: none;
+  }
+  .lightblue-color{
+    color:#1CBFDD;
+  }
+  .black-color{
+    color:#414141;
+  }
+  .lightgreen-color{
+    color:#59C512;
+  }
+  .yellow-color{
+    color:#FFBC17;
+  }
+  .lightred-color{
+    color:#FF3B50;
+  }
+  .arrow{
+    display: none;
+  }
+  .bs-popover-top,
+  .popover.fade.show.bs-popover-bottom {
+    .popover-body {
+      width: 260px;
+      padding: 0 !important;
+      .dropdown-item{
+        display: flex;
+        align-items: center;
+        padding: 0.5em 1em;
+        margin: 0;
+        border-top: 1px solid #F5F5F5;
+        #issueTypePopoverContainer-greenbox{
+          width: 14px;
+          height: 14px;
+          background-color: #41D222;
+          border-radius: 3px;
+          margin-right: 1em;
+        }
+        #issueTypePopoverContainer-redbox{
+          width: 14px;
+          height: 14px;
+          background-color: #FF3535;
+          border-radius: 3px;
+          margin-right:1em;
+        }
+        #issueTypePopoverContainer-bluebox{
+          width: 14px;
+          height: 14px;
+          background-color: #5967FF;
+          border-radius: 3px;
+          margin-right: 1em;
+        }
+        #issueTypePopoverContainer-orangebox{
+          width: 14px;
+          height: 14px;
+          background-color: #FF8336;
+          border-radius: 3px;
+          margin-right: 1em;
+        }#issueTypePopoverContainer-purplebox{
+           width: 14px;
+           height: 14px;
+           background-color: #B736FF;
+           border-radius: 3px;
+           margin-right: 1em;
+         }
+        #issueTypePopoverContainer-purplebox{
+          width: 14px;
+          height: 14px;
+          background-color: #B736FF;
+          border-radius: 3px;
+          margin-right: 1em;
+        }
+        #statusPopoverContainer-lightBluebox{
+          width: 14px;
+          height: 14px;
+          background-color: #1CBFDD;
+          border-radius: 3px;
+          margin-right: 1em;
+        }
+        #statusPopoverContainer-blackbox{
+          width: 14px;
+          height: 14px;
+          background-color: #414141;
+          border-radius: 3px;
+          margin-right: 1em;
+        }
+        #statusPopoverContainer-lightgreenbox{
+          width: 14px;
+          height: 14px;
+          background-color: #59C512;
+          border-radius: 3px;
+          margin-right: 1em;
+        }
+        #statusPopoverContainer-yellowbox{
+          width: 14px;
+          height: 14px;
+          background-color: #FFBC17;
+          border-radius: 3px;
+          margin-right: 1em;
+        }
+        #statusPopoverContainer-lightredbox{
+          width: 14px;
+          height: 14px;
+          background-color: #FF3B50;
+          border-radius: 3px;
+          margin-right: 1em;
+        }
+        div:nth-child(2){
+          margin-right: 2em;
+        }
 
+      }
+    }
+  }
+}
 #addAdditionalProductModal{
   .modal-content{
     .modal-body{
@@ -207,6 +585,40 @@
         background-color: transparent;
         border: none;
         margin-left: 0.25em;
+      }
+    }
+  }
+}
+#editOsVersion{
+  .modal-content{
+    border-radius: 4px;
+    .modal-body{
+      padding:24px;
+      button:first-child{
+        background-color:#00B372;
+        color: #FFFFFF;
+        font-family: "LatoWeb";
+        font-size: 16px;
+        border: none;
+        border-radius: 3px;
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+        padding:9px 21px;
+      }
+      button:nth-child(2){
+        background-color: transparent;
+        color: #181F1C;
+        font-family: "LatoWeb";
+        font-size: 16px;
+        border: none;
+        border-radius: 3px;
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+        padding:9px 21px;
+      }
+      input:focus{
+        outline: none;
+        box-shadow: none;
       }
     }
   }

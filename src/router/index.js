@@ -4,6 +4,7 @@ import Home from '../pages/home'
 import Tickets from '../pages/tickets/tickets'
 import TicketDetail from '../pages/ticket_detail/ticket-detail'
 import Profile from '../pages/profile/profile.vue'
+import CreateTicket from '../pages/create-ticket/create-ticket'
 
 Vue.use(Router)
 
@@ -28,6 +29,11 @@ export default new Router({
       path:'/profile',
       name:'Profile',
       component: Profile
+    },
+    {
+      path:'/create_ticket',
+      name:'CreateTicket',
+      component: CreateTicket
     }
   ]
 })

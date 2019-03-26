@@ -103,7 +103,5 @@
 </script>
 
 <style module>
-    body{
-        background-color: #F3F5F7;
-    }
+
 </style>

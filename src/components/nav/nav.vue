@@ -27,7 +27,7 @@
                                 </div>
 
                                 <div>
-                                    <b-popover v-on:show="$root.$emit('bv::hide::popover')" placement="bottomleft"  :show.sync="show" target="questions-sync"  id="support-nav-dropdown">
+                                    <b-popover v-on:show="$root.$emit('bv::hide::popover')" placement="bottomleft"   target="questions-sync"  id="support-nav-dropdown">
                                         <b-dropdown-item class="mb-lg-2"> <div class="d-flex align-items-center"><b-img class="mr-lg-4" :src="supportSvgUrl" /> Support Call</div></b-dropdown-item>
                                         <b-dropdown-item class="mb-lg-2"> <div class="d-flex align-items-center"><b-img class="mr-lg-4" :src="notificationSvgUrl" />Consultation</div></b-dropdown-item>
                                     </b-popover>
@@ -42,7 +42,7 @@
                                     </div>
 
                                     <div>
-                                        <b-popover v-on:show="$root.$emit('bv::hide::popover')" placement="bottomleft"  :show.sync="show" target="avatar-sync">
+                                        <b-popover v-on:show="$root.$emit('bv::hide::popover')" placement="bottomleft"  target="avatar-sync">
                                             <b-dropdown-item class="mb-lg-2"> <div class="d-flex align-items-center"><b-img class="mr-lg-4" :src="dashboardSvgUrl" /> Dashboard</div></b-dropdown-item>
                                             <b-dropdown-item class="mb-lg-2"> <div class="d-flex align-items-center"><b-img class="mr-lg-4" :src="notificationSvgUrl" /> Alerts</div></b-dropdown-item>
                                             <b-dropdown-item class="mb-lg-2"> <div class="d-flex align-items-center"><b-img class="mr-lg-4" :src="userSvgUrl" /> My Profile</div></b-dropdown-item>
